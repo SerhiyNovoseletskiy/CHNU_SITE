@@ -66,7 +66,7 @@ $graduates = LoadPlugin('Graduates');
 
     <div class="col-md-12">
         <!-- Main content -->
-        <div class="col-md-8">
+        <div class="col-md-8 wow fadeIn">
             <? LoadView($module, $view, $data, $data1) ?>
         </div>
         <!-- End main content -->
