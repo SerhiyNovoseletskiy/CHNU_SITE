@@ -72,6 +72,11 @@ class c_blog extends Controller {
                 'language' => LANGUAGE
             )
         );
+
+        if (empty($rubrick)) {
+            $this->template = false;
+            require_once 'templates/'.TEMPLATE.'/404.html';
+        }
 	
         $this->meta['title'] = $rubrick->name;
 
