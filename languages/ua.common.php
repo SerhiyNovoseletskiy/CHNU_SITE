@@ -1,8 +1,7 @@
 <?php
-define('CONTACTS', 'Контактна інформація');
-define('C_ADDRESS','м. Чернівці, вул. Гагаріна 12');
-define('C_TELEPHONE','Телефон: +38 (094) 991 41 09 <br> Мобільний: 050 82 12 818');
-define('C_BRON','Бронювання столиків: <br> +38 (0372) 902 109 ');
-define('OPEN_TIME','Відкриті з 12 години - до останнього відвідувача');
-define('BOOKING_ONLINE','Онлайн бронювання');
 define('MORE','Далі');
+define('PERSONAL', 'Персональних кабінет');
+define('SIGN_IN', 'Вхід');
+define('SIGN_OUT', 'Вихід');
+define('REGISTRATION', 'Реєстрація');
+define('WELCOME', 'Ласкаво просимо');
