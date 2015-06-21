@@ -26,5 +26,9 @@ class user_info
     public $sur_name;
     public $email;
     public $telephone;
-    public $adress;
+
+    public $birthday;
+    public $entry_year;
+    public $graduation_year;
+    public $department_id;
 }
