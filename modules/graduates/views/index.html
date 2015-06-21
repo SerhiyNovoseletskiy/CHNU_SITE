@@ -1,0 +1,35 @@
+<?foreach($data['graduates'] as $graduate) {?>
+    <div align="center" class="col-md-6">
+    <a href = "/profile/<?=$graduate->login?>">
+        <img src="/content/avatars/<?=$graduate->avatar?>" class="thumbnail">
+    </a>
+    <span><?=$graduate->sur_name?> <?=$graduate->first_name?> <?=$graduate->last_name?></span>
+    </div>
+<?}?>
+
+<div class="clearfix"></div>
+
+<div class="row">
+    <nav>
+        <ul class="pagination">
+            <li>
+                <a href="/graduates/1" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <?
+                for ($i = 1; $i <= $data['pages']; $i++) {
+            ?>
+            <li
+            <?if (($i-1) == $data['current_page']) {?>
+            class = 'active'
+            <?}?>><a href="/graduates/<?=$i?>"><?=$i?></a></li>
+            <?}?>
+            <li>
+                <a href="/graduates/<?=$data['pages']?>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
