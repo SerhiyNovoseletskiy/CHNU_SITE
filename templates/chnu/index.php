@@ -84,7 +84,7 @@ $graduates = LoadPlugin('Graduates');
 
             <div class="panel wow fadeIn">
                 <div class="panel-heading">
-                    <div class="panel-title">Наш випускник</div>
+                    <div class="panel-title"><?=GRADUATE?></div>
                 </div>
                 <div class="panel-body" align="center">
                     <?$graduates->get();?>
@@ -93,7 +93,7 @@ $graduates = LoadPlugin('Graduates');
 
             <div class="panel wow fadeIn">
                 <div class="panel-heading">
-                    <div class="panel-title">Події</div>
+                    <div class="panel-title"><?=EVENTS?></div>
                 </div>
                 <div class="panel-body">
                     <?$events->get()?>
