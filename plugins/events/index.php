@@ -9,7 +9,10 @@ class events {
             array(
                 'language' => LANGUAGE,
                 'rubrick' => 2
-            )
+            ),
+            'id',
+            'desc',
+            $limit
         );
         LoadView('blog', 'widget.events', $events);
     }

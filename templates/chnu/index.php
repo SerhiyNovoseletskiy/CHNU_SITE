@@ -2,6 +2,7 @@
 include_once 'languages/' . LANGUAGE . '.common.php';
 $user = LoadPlugin('User');
 $events = LoadPlugin('events');
+$graduates = LoadPlugin('Graduates');
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,8 +86,8 @@ $events = LoadPlugin('events');
                 <div class="panel-heading">
                     <div class="panel-title">Наш випускник</div>
                 </div>
-                <div class="panel-body">
-                    <img src="images/DSCN3258.JPG" class="thumbnail">
+                <div class="panel-body" align="center">
+                    <?$graduates->get();?>
                 </div>
             </div>
 
