@@ -1,6 +1,7 @@
 <?
 include_once 'languages/' . LANGUAGE . '.common.php';
 $user = LoadPlugin('User');
+$events = LoadPlugin('events');
 ?>
 <!DOCTYPE html>
 <html>
@@ -94,17 +95,7 @@ $user = LoadPlugin('User');
                     <div class="panel-title">Події</div>
                 </div>
                 <div class="panel-body">
-                    <div class="thumbnail">
-                        <img src="images/4f90c49e95cfbb31fb02471620dcf5fc.JPG" alt="...">
-
-                        <div class="caption">
-                            <h3>ЧНУ проти хабарів</h3>
-
-                            <p>
-                                <a href="#">Читати далі...</a>
-                            </p>
-                        </div>
-                    </div>
+                    <?$events->get()?>
                 </div>
             </div>
 
