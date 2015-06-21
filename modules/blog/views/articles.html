@@ -1,0 +1,50 @@
+<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+    <ul id="myTab" class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#all" id="home-tab" role="tab" data-toggle="tab" aria-controls="all" aria-expanded="true"><?=ALL?></a></li>
+        <?foreach($data['rubricks'] as $rub) {?>
+        <li role="presentation" ><a href="#rub_<?=$rub->_id?>"  role="tab" data-toggle="tab" aria-controls="all" aria-expanded="true"><?=$rub->name?></a></li>
+        <?}?>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade active in" id="all" aria-labelledby="new-tab">
+            <table class="table">
+                <?foreach($data['articles'] as $item){?>
+                <tr>
+                    <td><?=$item->title?></td>
+                    <td><?=$item->rubrick_name?></td>
+                    <td>
+                        <a href="<?=MODULE_URL?>/edit_blog/<?=$item->_id?>" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
+                    </td>
+
+                    <td>
+                        <a href="<?=MODULE_URL?>/remove_blog/<?=$item->_id?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    </td>
+                </tr>
+                <?}?>
+            </table>
+        </div>
+
+        <?foreach($data['rubricks'] as $rub) {?>
+        <div role="tabpanel" class="tab-pane fade active in" id="rub_<?=$rub->_id?>" aria-labelledby="new-tab">
+            <table class="table">
+                <?foreach($data['articles'] as $item){?>
+                <?if ($item->rubrick == $rub->_id){?>
+                <tr>
+                    <td><?=$item->title?></td>
+                    <td><?=$item->rubrick_name?></td>
+                    <td>
+                        <a href="<?=MODULE_URL?>/edit_blog/<?=$item->_id?>" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
+                    </td>
+
+                    <td>
+                        <a href="<?=MODULE_URL?>/remove_blog/<?=$item->_id?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    </td>
+                </tr>
+                <?}?>
+                <?}?>
+            </table>
+        </div>
+        <?}?>
+    </div>
+</div>

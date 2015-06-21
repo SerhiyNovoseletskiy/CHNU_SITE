@@ -1,0 +1,37 @@
+<form class="form-horizontal" id = "profile" method="post" action="/account/update" enctype="multipart/form-data">
+    <div class="col-md-4">
+        <label><?=USER_LOGIN?></label>
+        <input type="text" name="login" disabled value="<?=$data['user']->login?>" class="form-control" required=""/>
+
+        <label><?=USER_PASS?></label>
+        <input type="text" name="password"  class="form-control" />
+
+        <div align="center">
+            <img src="/content/avatars/<?=$data['user']->avatar?>" class="image">
+
+            <input type="file" name="avatar" class="form-control">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success"><?=SAVE?></button>
+    </div>
+
+    <div class="col-md-6">
+        <label><?=FIRST_NAME?></label>
+        <input type="text" name="first_name" value="<?=$data['user_info']->first_name?>" class="form-control" required=""/>
+
+        <label><?=LAST_NAME?></label>
+        <input type="text" name="last_name" value="<?=$data['user_info']->last_name?>" class="form-control" required=""/>
+
+        <label><?=SUR_NAME?></label>
+        <input type="text" name="sur_name" value="<?=$data['user_info']->sur_name?>" class="form-control" required=""/>
+
+        <label><?=EMAIL?></label>
+        <input type="email" name="email" value="<?=$data['user_info']->email?>" class="form-control" required=""/>
+
+        <label><?=TELEPHONE?></label>
+        <input type="text" name="telephone" value="<?=$data['user_info']->telephone?>" class="form-control" required=""/>
+
+        <label><?=ADRESS?></label>
+        <input type="text" name="adress" value="<?=$data['user_info']->adress?>" class="form-control" required=""/>
+    </div>
+</form>

@@ -1,0 +1,69 @@
+<script src="/plugins/js/translit.js"></script>
+<script src="/plugins/js/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea', plugins: [
+            "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars code fullscreen",
+            "insertdatetime media nonbreaking save table contextmenu directionality",
+            "emoticons template paste textcolor jbimages"
+        ],
+        toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar2: "print preview media | forecolor backcolor emoticons", language: '<?=DEFAULT_LANGUAGE?>'
+    });
+</script>
+
+<form enctype="multipart/form-data" method="post" action="<?=MODULE_URL?>/update_blog" id = 'blog'>
+    <input type="hidden" name="id" value="<?=$data['article']->_id?>">
+    <div class="col-md-9">
+        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                <?
+            $i = 0;
+            foreach($data['languages'] as $language) {?>
+                <li role="presentation"
+                <?if ($i == 0){?> class="active"<?}?>><a href="#<?=$language->code?>" id="<?=$language->code?>-tab"
+                                                         role="tab" data-toggle="tab" aria-controls="<?=$language->code?>"
+                                                         aria-expanded="true"><?=$language->name?></a></li>
+                <?$i++;}?>
+            </ul>
+            <div class="tab-content">
+                <?
+            $i = 0;
+            foreach($data['languages'] as $language) {?>
+                <div role="tabpanel" class="tab-pane <?if ($i == 0) {?> active<?}?> " id="<?=$language->code?>">
+                    <?=TITLE?>
+                    <input type="text" name="title_<?=$language->code?>" id="title" required="" class="form-control" value="<?=$data[$language->code]->title?>">
+                    <textarea name="content_<?=$language->code?>" style="height: 400px;"><?=$data[$language->code]->content?></textarea>
+                </div>
+                <?$i++;}?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label><?=ALIAS?></label>
+        <input name="alias" id="alias" required="" value="<?=$data['article']->alias?>" class="form-control">
+
+        <label><?=IMAGE?></label>
+        <img src="/content/blog/600_<?=$data['article']->image?>">
+        <input name="image" accept="image/*" type="file"  class="form-control">
+
+        <label><?=RUBRICK?></label>
+        <select name="rubrick" class="form-control" required="">
+            <option value="">-- <?=RUBRICK?> --</option>
+            <?foreach($data['rubricks'] as $rubrick) {?>
+            <option value="<?=$rubrick->_id?>" <?if ($data['article']->rubrick == $rubrick->_id){?>selected<?}?>><?=$rubrick->name?></option>
+            <?}?>
+        </select>
+
+        <label><?=TIME_TO_PUBLICK?></label>
+        <input type="date" class="form-control" name="time_to_publick" value="<?=$data['article']->time_to_publick?>">
+
+        <label><?=KEYWORDS?></label>
+        <input type="text" name="keywords" class="form-control" value="<?=$data['article']->keywords?>">
+
+        <label><?=DESCRIPTION?></label>
+        <input type="text" name="description" class="form-control" value="<?=$data['article']->description?>">
+    </div>
+</form>

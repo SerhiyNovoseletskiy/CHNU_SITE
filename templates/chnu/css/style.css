@@ -1,0 +1,140 @@
+@import "bootstrap.min.css";
+@charset "utf-8";
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background:  #eee;
+}
+
+.container {
+    background: #ffffff;
+    padding: 0;
+    box-shadow: #ccc 1px 1px 1px ;
+    top: 230px;
+    position: relative;
+}
+
+.nav {
+    background: #ffffff;
+    border-radius: 0;
+    z-index: 99999;
+
+}
+
+.nav > li a {
+    transition: all .9s ease;
+}
+
+.nav > li a:hover {
+    background: #ffffff;
+    color: #222222;
+}
+
+.header-image {
+    width: 100%;
+    height: 300px;
+    background: url("../images/header.jpg");
+    background-size: cover;
+    position: fixed;
+}
+
+.footer {
+    width: 100%;
+    float: left;
+    height: 70px;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+}
+
+.footer > a {
+    float: right;
+}
+
+.navbar-header {
+    max-width: 100%;
+}
+
+.article img {
+    width: 40%;
+    margin: 10px;
+    float: left;
+}
+
+#up_button {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    border: none;
+    text-indent: 100%;
+    background: url("../images/to-top2.png") no-repeat 0 0;
+    opacity: .7;
+    cursor: pointer;
+    transition: ease opacity .6s;
+}
+
+#up_button:hover {
+    opacity: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* Animation */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+/* End animated */

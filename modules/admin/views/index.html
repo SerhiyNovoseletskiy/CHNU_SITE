@@ -1,0 +1,51 @@
+<div class="col-md-6">
+    <?
+    foreach($data['widgets'] as $widget) {
+        require_once('modules/'.$widget->module.'/widget.php');
+        $wdg = new $widget->widget;
+        $wdg->_index();
+        LoadView($widget->module,$wdg->view,$wdg->data);
+    ?>
+    <?}?>
+</div>
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><?=SIGN_IN_LOG?></h3>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <?
+            foreach($data['log'] as $log) {
+            ?>
+
+            <tr>
+                <td>
+                    <?=$log->_log_id?>
+                </td>
+
+                <td>
+                    <?=$log->login?>
+                </td>
+
+                <td>
+                    <?=date("d-m-Y h:i:s",$log->date)?>
+                </td>
+
+                <td>
+                    <?=$log->IP?>
+                </td>
+            </tr>
+
+            <?
+            }
+            ?>
+        </table>
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-default"><?=CLEAR_ALL?></button>
+        <div style="float: right"><a href="/admin/log"><?=SEE_ALL?></a></div>
+    </div>
+</div>

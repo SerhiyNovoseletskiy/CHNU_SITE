@@ -1,0 +1,76 @@
+<header class="content-title"><h1 class="title"><?=REGISTRATION?></h1>
+
+    <div class="md-margin"></div>
+</header>
+<div class="col-md-12" id = "information">
+    <?
+    if (isset($data['error']))
+    foreach($data['error'] as $error){?>
+    <div class="alert alert-danger">
+        <?=$error?>
+    </div>
+    <?}?>
+</div>
+<form method="post" action="/account/reg">
+<div class="col-md-6">
+    <div class="xs-margin"></div>
+        <div class="input-group"><span class="input-group-addon"><span
+                class="input-icon input-icon-user"></span><span class="input-text"><?=LOGIN?> *</span></span> <input
+                required="" value="<?=$data['user']['login']?>" class="form-control input-lg" name="login" id = 'login' type="text"></div>
+        <div class="input-group xs-margin"><span class="input-group-addon"><span
+                class="input-icon input-icon-password"></span><span class="input-text"><?=PASSWORD?> *</span></span>
+            <input required="" class="form-control input-lg" name="password"  type="text"></div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="input-text"><?=EMAIL?> *</span>
+        </span>
+        <input required="" value="<?=$data['user']['email']?>" class="form-control input-lg" id="email" name="email" type="email">
+    </div>
+    <div class="sm-margin"></div>
+</div>
+<div class="col-md-6">
+    <div class="xs-margin"></div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="input-text"><?=SUR_NAME?> *</span>
+        </span>
+        <input required="" class="form-control input-lg" name="sur_name" value="<?=$data['user']['sur_name']?>" type="text">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="input-text"><?=FIRST_NAME?> *</span>
+        </span>
+        <input required="" class="form-control input-lg" value="<?=$data['user']['first_name']?>" name="first_name" type="text">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="input-text"><?=LAST_NAME?> *</span>
+        </span>
+        <input required="" class="form-control input-lg" value="<?=$data['user']['last_name']?>" name="last_name" type="text">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="input-text"><?=TELEPHONE?> *</span>
+        </span>
+        <input required="" class="form-control input-lg" name="telephone" value="<?=$data['user']['telephone']?>" type="text">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <span class="input-text"><?=ADRESS?> *</span>
+        </span>
+        <input required="" class="form-control input-lg" name="adress" value="<?=$data['user']['adress']?>" type="text">
+    </div>
+</div>
+
+<div class="col-md-12">
+    <button class="btn btn-custom"><?=REGISTRATION?></button>
+</div>
+</form>
+<script>
+    function form_valid() {
+        $.post('/account/valid',{login: $("#login").val(), email: $("#email").val()}, function(d){
+           $("#information").html(d);
+        });
+
+    }
+</script>

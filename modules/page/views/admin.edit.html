@@ -1,0 +1,70 @@
+<script src="/plugins/js/translit.js"></script>
+<script src="/plugins/js/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        relative_urls : false,
+        convert_urls : false,
+        extended_valid_elements: 'link,form,input',
+                selector: 'textarea', plugins: [
+            "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars code fullscreen",
+            "insertdatetime media nonbreaking save table contextmenu directionality",
+            "emoticons template paste textcolor  jbimages"
+        ],
+        toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar2: "print preview media | forecolor backcolor emoticons", language: '<?=DEFAULT_LANGUAGE?>'
+    });
+</script>
+<div class="row">
+    <form method="POST" action="<?=MODULE_URL?>/update" id="page">
+        <input type="hidden" name="page_id" value="<?=$data['page']->_page_id?>">
+        <div class="col-md-8">
+            <div role="tabpanel">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <?
+                    $i = 0;
+                    foreach($data['languages'] as $language) {
+                    ?>
+                    <li role="presentation" <?if ($i == 0){?>class="active"<?}?>><a href="#<?=$language->code?>" aria-controls="<?=$language->code?>" role="tab"
+                                                                                    data-toggle="tab"><?=$language->name?></a></li>
+                    <?
+                    $i++;
+                    }
+                    ?>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <?
+                    $i = 0;
+                    foreach($data['languages'] as $language) {
+                    ?>
+                    <div role="tabpanel" class="tab-pane <?if ($i == 0){?>active<?}?>" id="<?=$language->code?>">
+                        <label><?=PAGE_NAME?></label>
+                        <input type="text" id="title" value="<?=$data[$language->code]->title?>" name="title_<?=$language->code?>" class="form-control" required="true">
+                        <textarea name="content_<?=$language->code?>" style="height: 400px;"><?=$data[$language->code]->content?></textarea>
+                    </div>
+                    <?
+                    $i++;
+                    }
+                    ?>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <label><?=PAGE_ALIAS?></label>
+            <input type="text" id="alias" name="alias" class="form-control" required="true" value="<?=$data['page']->alias?>">
+
+
+            <label><?=PAGE_KEYWORDS?></label>
+            <input type="text" name="keywords" class="form-control" value="<?=$data['page_info']->keywords?>" value = "<?=$data['page']->keywords?>">
+
+            <label><?=PAGE_DESCRIPTION?></label>
+            <input type="text" name="description" class="form-control" value="<?=$data['page_info']->description?>" value = "<?=$data['page']->description?>">
+        </div>
+    </form>
+</div>

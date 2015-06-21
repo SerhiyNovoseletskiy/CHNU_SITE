@@ -1,0 +1,18 @@
+<div class="width-container">
+    <div id="single-meta-pro">
+        <div id="single-page-title-pro">
+            <div class="pro-cat"><time class="entry-date" datetime="2014-06-25T14:40:47+00:00"><?=$data->time_to_publick?></time></div>
+            <h2 class="blog-title"><?=$data->title?></h2>
+        </div>
+    </div>
+</div><!-- close .width-container -->
+
+<div class="featured-blog-progression">
+    <a href="http://chelsea-pub.com/content/blog/a6f87a7b6f7d6f73a62a4f9d14e5e605.jpg" rel="prettyPhoto">
+        <img width="1200" height="600" src="/content/blog/<?=$data->image?>" class="attachment-progression-blog-single" alt="Restaurant">
+    </a>
+</div>
+
+<div>
+    <?=htmlspecialchars_decode($data->content)?>
+</div>
