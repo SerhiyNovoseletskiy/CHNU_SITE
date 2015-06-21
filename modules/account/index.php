@@ -1,12 +1,16 @@
 <?php
-class c_account extends Controller{
+
+class c_account extends Controller
+{
     private $user;
 
-    function __construct() {
+    function __construct()
+    {
         $this->user = LoadPlugin('User');
     }
 
-    function _index() {
+    function _index()
+    {
         LoadLanguage('admin');
         LoadLanguage('ecommerce');
         global $model;
@@ -62,19 +66,22 @@ class c_account extends Controller{
         header("Location: {$_SERVER[HTTP_REFERER]}");
     }
 
-    function _sign_out() {
+    function _sign_out()
+    {
         $this->template = false;
         $this->user->signOut();
-        setcookie('ecommerce_u_id',$this->user->user->_user_id,time()-5454,'/');
-        header('Location:'.$_SERVER['HTTP_REFERER']);
+        setcookie('ecommerce_u_id', $this->user->user->_user_id, time() - 5454, '/');
+        header('Location:' . $_SERVER['HTTP_REFERER']);
     }
 
-    function _login() {
+    function _login()
+    {
         $this->meta['title'] = SIGN_IN;
         $this->view = 'login';
     }
 
-    function _sign_in() {
+    function _sign_in()
+    {
         $this->template = false;
         $this->user->Auth($_POST['login'], $_POST['password']);
         if ($this->user->isAuth()) {
@@ -84,14 +91,16 @@ class c_account extends Controller{
         header('Location: /');
     }
 
-    function _registration() {
+    function _registration()
+    {
         $this->meta['title'] = REGISTRATION;
         $this->view = 'registration';
     }
 
-    function _reg() {
+    function _reg()
+    {
         global $model;
-        LoadModel('admin','user');
+        LoadModel('admin', 'user');
         $this->meta['title'] = REGISTRATION;
         $this->view = 'registration';
         $this->data['error'] = array();
@@ -103,14 +112,14 @@ class c_account extends Controller{
         $this->data['user']['telephone'] = $_POST['telephone'];
         $this->data['user']['adress'] = $_POST['adress'];
 
-        $login = $model->getRowByParam(new users(),array('login' => $_POST['login']));
+        $login = $model->getRowByParam(new users(), array('login' => $_POST['login']));
         if (!empty($login)) {
-            array_push($this->data['error'],LOGIN_BISY);
+            array_push($this->data['error'], LOGIN_BISY);
         }
 
-        $email = $model->getRowByParam(new user_info(),array('email'=>$_POST['email']));
+        $email = $model->getRowByParam(new user_info(), array('email' => $_POST['email']));
         if (!empty($email)) {
-            array_push($this->data['error'],EMAIL_BISY);
+            array_push($this->data['error'], EMAIL_BISY);
         }
 
         if (count($this->data['error']) == 0) {

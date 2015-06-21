@@ -157,7 +157,7 @@ class admin_blog extends Controller
         global $model;
         LoadModel('blog', 'blog');
         LoadModel('blog', 'rubrick');
-        LoadModel('admin','menu');
+        LoadModel('admin', 'menu');
 
         $this->data['articles'] = $model->getByParam(
             new v_blog_for_admin(),
@@ -169,7 +169,7 @@ class admin_blog extends Controller
             null,
             null,
             array(
-                'id', 'title','rubrick', 'rubrick_name'
+                'id', 'title', 'rubrick', 'rubrick_name'
             )
         );
 
@@ -189,7 +189,7 @@ class admin_blog extends Controller
 
         $menu = new menu();
         $menu->tag = 'a';
-        $menu->href = MODULE_URL.'/add_blog';
+        $menu->href = MODULE_URL . '/add_blog';
         $menu->value = '<span class="glyphicon glyphicon-plus"></span>';
         $menu->class = 'btn btn-primary';
 
@@ -251,18 +251,19 @@ class admin_blog extends Controller
         array_push($this->menu, $ms);
     }
 
-    function _remove_blog() {
+    function _remove_blog()
+    {
         global $model;
-        LoadModel('blog','blog');
+        LoadModel('blog', 'blog');
 
         $article = $model->getById(
             new blog(),
             $this->url[5]
         );
 
-        if (is_file('content/blog/'.$article->image)) {
-            unlink('content/blog/'.$article->image);
-            unlink('content/blog/600_'.$article->image);
+        if (is_file('content/blog/' . $article->image)) {
+            unlink('content/blog/' . $article->image);
+            unlink('content/blog/600_' . $article->image);
         }
 
         $model->delete($article);
@@ -274,7 +275,7 @@ class admin_blog extends Controller
             )
         );
 
-        foreach($details as $det)
+        foreach ($details as $det)
             $model->delete($det);
 
         header("Location: {$_SERVER['HTTP_REFERER']}");

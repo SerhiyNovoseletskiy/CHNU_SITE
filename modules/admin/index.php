@@ -1,5 +1,7 @@
 <?php
-class Widget {
+
+class Widget
+{
     public $data;
     public $view;
 }
@@ -20,7 +22,7 @@ class c_admin extends Controller
         $this->user = LoadPlugin('User');
         $this->actions = false;
 
-        require_once 'languages/'.DEFAULT_LANGUAGE.'.admin.php';
+        require_once 'languages/' . DEFAULT_LANGUAGE . '.admin.php';
 
         if (!empty($this->url[2]))
             $action = '_' . $this->url[2];

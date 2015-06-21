@@ -1,13 +1,16 @@
 <?php
-class c_user extends Controller {
-    function _new() {
+
+class c_user extends Controller
+{
+    function _new()
+    {
         $this->meta['title'] = NEW_USER;
         $this->view = 'new.user';
-        LoadModel('admin','user');
+        LoadModel('admin', 'user');
         global $model;
         $this->data = $model->getAll(new user_groups());
 
-        LoadModel('admin','menu');
+        LoadModel('admin', 'menu');
         $ms = new menu();
         $ms->tag = 'button';
         $ms->form = 'user';
@@ -17,15 +20,16 @@ class c_user extends Controller {
         $this->menu = array($ms);
     }
 
-    function _edit() {
+    function _edit()
+    {
         $this->view = 'edit.user';
-        LoadModel('admin','user');
+        LoadModel('admin', 'user');
         global $model;
-        $this->data['user'] = $model->getById(new users(),$this->url[4]);
+        $this->data['user'] = $model->getById(new users(), $this->url[4]);
         $this->data['groups'] = $model->getAll(new user_groups());
         $this->meta['title'] = $this->data['user']->login;
 
-        LoadModel('admin','menu');
+        LoadModel('admin', 'menu');
         $ms = new menu();
         $ms->tag = 'button';
         $ms->form = 'user';
@@ -35,10 +39,11 @@ class c_user extends Controller {
         $this->menu = array($ms);
     }
 
-    function _save() {
+    function _save()
+    {
         $this->template = false;
         global $model;
-        LoadModel('admin','user');
+        LoadModel('admin', 'user');
 
         $user = new users();
         $user->login = $_POST['login'];
@@ -49,10 +54,11 @@ class c_user extends Controller {
         header('Location: /admin/users');
     }
 
-    function _update() {
+    function _update()
+    {
         $this->template = false;
         global $model;
-        LoadModel('admin','user');
+        LoadModel('admin', 'user');
 
         $user = $model->getById(new users(), $_POST['user_id']);
 
@@ -66,6 +72,6 @@ class c_user extends Controller {
 
         $model->update($user);
 
-        header('Location: /admin/user/edit/'.$_POST['user_id']);
+        header('Location: /admin/user/edit/' . $_POST['user_id']);
     }
 }

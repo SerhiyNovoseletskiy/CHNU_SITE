@@ -1,8 +1,11 @@
 <?php
-class c_blog extends Controller {
+
+class c_blog extends Controller
+{
     private $page_limit = 6;
 
-    private function get_by_default_language() {
+    private function get_by_default_language()
+    {
         global $model;
         $this->data = $model->getRowByParam(
             new v_blog(),
@@ -13,16 +16,18 @@ class c_blog extends Controller {
         );
     }
 
-    function _article() {
+    function _article()
+    {
         $this->template = false;
-        header("Location: /blog/".$this->url[3]);
+        header("Location: /blog/" . $this->url[3]);
     }
 
-    function _index() {
+    function _index()
+    {
 
         if ($this->url[2] == 'article') {
             $this->template = false;
-            require_once 'templates/'.TEMPLATE.'/404.html';
+            require_once 'templates/' . TEMPLATE . '/404.html';
 
         } else {
             global $model;
@@ -50,7 +55,7 @@ class c_blog extends Controller {
 
             if (empty($this->data)) {
                 $this->template = false;
-                require_once 'templates/'.TEMPLATE.'/404.html';
+                require_once 'templates/' . TEMPLATE . '/404.html';
             }
             $this->meta['title'] = $this->data->title;
             $this->meta['keywords'] = $this->data->keywords;
@@ -58,10 +63,11 @@ class c_blog extends Controller {
         }
     }
 
-    function _rubric() {
+    function _rubric()
+    {
         $this->view = 'rubrick';
 
-        LoadModel('blog','blog');
+        LoadModel('blog', 'blog');
         LoadModel('blog', 'rubrick');
         global $model;
 
@@ -75,9 +81,9 @@ class c_blog extends Controller {
 
         if (empty($rubrick)) {
             $this->template = false;
-            require_once 'templates/'.TEMPLATE.'/404.html';
+            require_once 'templates/' . TEMPLATE . '/404.html';
         }
-	
+
         $this->meta['title'] = $rubrick->name;
 
         $rec_count = $model->getCount(
@@ -88,14 +94,14 @@ class c_blog extends Controller {
         );
 
         if (!empty($this->url[4])) {
-            $page = $this->url[4] -1;
+            $page = $this->url[4] - 1;
             $offset = $this->page_limit * $page;
         } else {
             $page = 0;
             $offset = 0;
         }
 
-        $this->data['pages']= ceil($rec_count/$this->page_limit);
+        $this->data['pages'] = ceil($rec_count / $this->page_limit);
         $this->data['articles'] = $model->getByParam(
             new v_blog(),
             array(
@@ -107,7 +113,7 @@ class c_blog extends Controller {
             $offset,
             $this->page_limit,
             array(
-                'title','alias','image','time_to_publick','content'
+                'title', 'alias', 'image', 'time_to_publick', 'content'
             )
         );
         $this->data['rubricks'] = $model->getByParam(

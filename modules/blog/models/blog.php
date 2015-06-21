@@ -1,5 +1,7 @@
 <?php
-class blog {
+
+class blog
+{
     public $_id;
     public $alias;
     public $image;
@@ -9,7 +11,8 @@ class blog {
     public $description;
 }
 
-class blog_details {
+class blog_details
+{
     public $_id;
     public $blog;
     public $language;
@@ -17,7 +20,8 @@ class blog_details {
     public $content;
 }
 
-class v_blog {
+class v_blog
+{
     public $_id;
     public $title;
     public $alias;
@@ -30,6 +34,7 @@ class v_blog {
     public $content;
 }
 
-class v_blog_for_admin  extends v_blog{
+class v_blog_for_admin extends v_blog
+{
     public $rubrick_name;
 }

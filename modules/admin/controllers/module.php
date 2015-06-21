@@ -17,8 +17,8 @@ class c_module extends Controller
             $this->controller = 'admin_' . $this->url[3];
 
             if (class_exists($this->controller)) {
-                if (is_file('languages/'.DEFAULT_LANGUAGE.'.'.$this->url[3].'.php'))
-                    require_once 'languages/'.DEFAULT_LANGUAGE.'.'.$this->url[3].'.php';
+                if (is_file('languages/' . DEFAULT_LANGUAGE . '.' . $this->url[3] . '.php'))
+                    require_once 'languages/' . DEFAULT_LANGUAGE . '.' . $this->url[3] . '.php';
 
                 $this->controller = new $this->controller;
                 $this->controller->url = $this->url;

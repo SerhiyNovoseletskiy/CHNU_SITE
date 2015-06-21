@@ -25,26 +25,26 @@
 <div class="clearfix"></div>
 
 <div class="row">
-<nav>
-    <ul class="pagination">
-        <li>
-            <a href="/blog/rubric/<?=$data['current_rubrick']->alias?>/1" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <?
+    <nav>
+        <ul class="pagination">
+            <li>
+                <a href="/blog/rubric/<?=$data['current_rubrick']->alias?>/1" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <?
                 for ($i = 1; $i <= $data['pages']; $i++) {
             ?>
-        <li
-        <?if (($i-1) == $data['current_page']) {?>
-        class = 'active'
-        <?}?>><a href="/blog/rubric/<?=$data['current_rubrick']->alias?>/<?=$i?>"><?=$i?></a></li>
-        <?}?>
-        <li>
-            <a href="/blog/rubric/<?=$data['current_rubrick']->alias?>/<?=$data['pages']?>" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-    </div>
+            <li
+            <?if (($i-1) == $data['current_page']) {?>
+            class = 'active'
+            <?}?>><a href="/blog/rubric/<?=$data['current_rubrick']->alias?>/<?=$i?>"><?=$i?></a></li>
+            <?}?>
+            <li>
+                <a href="/blog/rubric/<?=$data['current_rubrick']->alias?>/<?=$data['pages']?>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

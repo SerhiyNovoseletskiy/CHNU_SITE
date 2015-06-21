@@ -15,7 +15,7 @@ class Model
 
         foreach ($vars as $var => $values) {
             if ($var !== '_' . $id)
-                $keys .= '`'.$var.'`' . ',';
+                $keys .= '`' . $var . '`' . ',';
             else
                 $var = substr($var, 1, strlen($var));
         }
@@ -51,10 +51,10 @@ class Model
 
         if ($columns !== null) {
             $cols = '';
-            foreach($columns as $var)
+            foreach ($columns as $var)
                 $cols .= "`$var`,";
 
-            $cols = substr($cols, 0, strlen($cols)-1);
+            $cols = substr($cols, 0, strlen($cols) - 1);
         }
 
         $query = "SELECT {$cols} FROM {$class_name} WHERE {$param}";
@@ -66,10 +66,10 @@ class Model
             $query .= ' ' . $order;
 
         if ($limit !== null)
-            $query .= ' LIMIT '.$limit;
+            $query .= ' LIMIT ' . $limit;
 
         if ($limit_to !== null)
-            $query .= ','.$limit_to;
+            $query .= ',' . $limit_to;
 
         $r = mysql_query($query);
         $vars = get_class_vars($class_name);
@@ -110,7 +110,7 @@ class Model
 
         foreach ($vars as $var => $values) {
             if ($var !== '_' . $id)
-                $keys .= '`'.$var.'`' . ',';
+                $keys .= '`' . $var . '`' . ',';
             else
                 $var = substr($var, 1, strlen($var));
         }
@@ -126,7 +126,7 @@ class Model
             $query .= ' ' . $order;
 
         if ($limit !== null)
-            $query .= ' LIMIT '.$limit;
+            $query .= ' LIMIT ' . $limit;
 
         $r = mysql_query($query);
         $array = array();
@@ -230,7 +230,8 @@ class Model
         return $max[0];
     }
 
-    function getCount($class, $params = null) {
+    function getCount($class, $params = null)
+    {
         $class_name = get_class($class);
         $id = $this->getId(get_class_vars($class_name));
         $query = "SELECT COUNT({$id}) FROM {$class_name}";

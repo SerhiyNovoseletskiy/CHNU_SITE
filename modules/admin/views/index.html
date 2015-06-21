@@ -2,9 +2,9 @@
     <?
     foreach($data['widgets'] as $widget) {
         require_once('modules/'.$widget->module.'/widget.php');
-        $wdg = new $widget->widget;
-        $wdg->_index();
-        LoadView($widget->module,$wdg->view,$wdg->data);
+    $wdg = new $widget->widget;
+    $wdg->_index();
+    LoadView($widget->module,$wdg->view,$wdg->data);
     ?>
     <?}?>
 </div>

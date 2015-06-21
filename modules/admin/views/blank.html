@@ -115,12 +115,14 @@
                         foreach($data1['menu'] as $item) {
                             switch($item->tag) {
                 case 'a' : {
-                echo '<a href="'.$item->href.'" title = "'.$item->title.'" class="'.$item->class.'">'.$item->value.'</a>';
+                echo '<a href="'.$item->href.'" title="'.$item->title.'" class="'.$item->class.'">'.$item->value.'</a>';
                 } break;
 
                 case 'button' : {
                 echo '
-                <button type="'.$item->type.'" title = "'.$item->title.'" form="'.$item->form.'" class="'.$item->class.'">'.$item->value.'</button>
+                <button type="'.$item->type.'" title="'.$item->title.'" form="'.$item->form.'" class="'.$item->class.'">
+                    '.$item->value.'
+                </button>
                 ';
                 } break;
                 }

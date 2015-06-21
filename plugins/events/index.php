@@ -1,6 +1,9 @@
 <?php
-class events {
-    function get($limit = 3) {
+
+class events
+{
+    function get($limit = 3)
+    {
         global $model;
         LoadModel('blog', 'blog');
 

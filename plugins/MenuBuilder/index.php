@@ -2,12 +2,13 @@
 
 class MenuBuilder
 {
-    function build($menu) {
+    function build($menu)
+    {
         echo "<ul class='{$menu['class']}' id = '{$menu['id']}'>";
 
         $items = $menu[LANGUAGE];
 
-        foreach($items as $item) {
+        foreach ($items as $item) {
             if ($_SERVER['REQUEST_URI'] == $item['link'])
                 $active = $menu['active_class'];
             else
@@ -17,7 +18,7 @@ class MenuBuilder
 
             if ($item['children'] !== null) {
                 echo "<ul class='{$item['clild_class']}'>";
-                foreach($item['children'] as $sub) {
+                foreach ($item['children'] as $sub) {
                     echo "<li><a href='{$sub['link']}' class='{$sub['class']}'>{$sub['title']}</a></li>";
                 }
                 echo "</ul>";

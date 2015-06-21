@@ -17,7 +17,8 @@ class page_content
     public $content;
 }
 
-class v_page {
+class v_page
+{
     public $_page_id;
     public $title;
     public $alias;

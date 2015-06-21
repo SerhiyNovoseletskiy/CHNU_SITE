@@ -9,8 +9,6 @@ class SafeMySQL
     private $exname;
 
 
-
-
     public function query()
     {
         return $this->rawQuery($this->prepareQuery(func_get_args()));

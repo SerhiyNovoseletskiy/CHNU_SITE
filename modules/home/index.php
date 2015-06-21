@@ -1,11 +1,14 @@
 <?php
-class c_home extends Controller {
-    function _index() {
+
+class c_home extends Controller
+{
+    function _index()
+    {
         global $model;
 
         $this->meta['title'] = SITE_NAME;
 
-        LoadModel('page','page');
+        LoadModel('page', 'page');
         LoadModel('blog', 'blog');
 
         $this->data['about'] = $model->getRowByParam(

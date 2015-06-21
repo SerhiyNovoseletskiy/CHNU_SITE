@@ -23,8 +23,10 @@
                     $i = 0;
                     foreach($data as $language) {
                     ?>
-                    <li role="presentation" <?if ($i == 0){?>class="active"<?}?>><a href="#<?=$language->code?>" aria-controls="<?=$language->code?>" role="tab"
-                                                              data-toggle="tab"><?=$language->name?></a></li>
+                    <li role="presentation"
+                    <?if ($i == 0){?>class="active"<?}?>><a href="#<?=$language->code?>"
+                                                            aria-controls="<?=$language->code?>" role="tab"
+                                                            data-toggle="tab"><?=$language->name?></a></li>
                     <?
                     $i++;
                     }
@@ -39,7 +41,8 @@
                     ?>
                     <div role="tabpanel" class="tab-pane <?if ($i == 0){?>active<?}?>" id="<?=$language->code?>">
                         <label><?=PAGE_NAME?></label>
-                        <input type="text" id="title" name="title_<?=$language->code?>" class="form-control" required="true">
+                        <input type="text" id="title" name="title_<?=$language->code?>" class="form-control"
+                               required="true">
                         <textarea name="content_<?=$language->code?>" style="height: 400px;"></textarea>
                     </div>
                     <?

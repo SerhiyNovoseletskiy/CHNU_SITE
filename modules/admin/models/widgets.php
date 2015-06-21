@@ -1,7 +1,8 @@
 <?php
 LoadLanguage('ecommerce');
 
-class widgets {
+class widgets
+{
     public $_id;
     public $module;
     public $widget;

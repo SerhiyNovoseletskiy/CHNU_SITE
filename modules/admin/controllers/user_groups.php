@@ -1,15 +1,18 @@
 <?php
-class c_user_groups extends Controller {
-    function _index() {
+
+class c_user_groups extends Controller
+{
+    function _index()
+    {
         $this->view = 'user.groups';
 
         $this->meta['title'] = USER_GROUPS;
 
-        LoadModel('admin','user');
+        LoadModel('admin', 'user');
         global $model;
         $this->data = $model->getAll(new user_groups());
 
-        LoadModel('admin','menu');
+        LoadModel('admin', 'menu');
 
         $ms = new menu();
         $ms->tag = 'a';
@@ -20,11 +23,12 @@ class c_user_groups extends Controller {
         $this->menu = array($ms);
     }
 
-    function _add() {
+    function _add()
+    {
         $this->meta['title'] = NEW_USER_GROUP;
         $this->view = 'new.user.group';
 
-        LoadModel('admin','menu');
+        LoadModel('admin', 'menu');
         $this->menu = array();
 
         $ms = new menu();
@@ -43,10 +47,11 @@ class c_user_groups extends Controller {
 
     }
 
-    function _save() {
+    function _save()
+    {
         $this->template = false;
         global $model;
-        LoadModel('admin','user');
+        LoadModel('admin', 'user');
         $ug = new user_groups();
         $ug->name = $_POST['user_group'];
 

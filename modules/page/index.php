@@ -2,7 +2,8 @@
 
 class c_page extends Controller
 {
-    private function getByDefaultLanguage() {
+    private function getByDefaultLanguage()
+    {
         global $model;
         $this->data = $model->getRowByParam(
             new v_page(),
@@ -12,6 +13,7 @@ class c_page extends Controller
             )
         );
     }
+
     function _index()
     {
         LoadModel('page', 'page');
@@ -38,7 +40,7 @@ class c_page extends Controller
 
         if (empty($this->data)) {
             $this->template = false;
-            require_once 'templates/'.TEMPLATE.'/404.html';
+            require_once 'templates/' . TEMPLATE . '/404.html';
         }
 
         $this->view = 'page';

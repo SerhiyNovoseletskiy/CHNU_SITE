@@ -39,24 +39,29 @@ $graduates = LoadPlugin('Graduates');
                     <li><a href="/language/en"><img src="/languages/en.png" width="24"></a></li>
 
                     <?
-                    if (!$user->isAuth()) {?>
+                    if (!$user->isAuth()) { ?>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false"><?=PERSONAL?> <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false"><?= PERSONAL ?> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/account/login"><?=SIGN_IN?></a></li>
-                                <li><a href="/account/registration"><?=REGISTRATION?></a></li>
+                                <li><a href="/account/login"><?= SIGN_IN ?></a></li>
+                                <li><a href="/account/registration"><?= REGISTRATION ?></a></li>
                             </ul>
                         </li>
-                    <?} else {?>
+                    <? } else { ?>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false"><?=WELCOME?> <?=$user->user->login?> <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false"><?= WELCOME ?> <?= $user->user->login ?> <span
+                                    class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/account/sign_out"><?=SIGN_OUT?></a></li>
+                                <li><a href="/messages"><?= MESSAGES ?></a></li>
+                                <li><a href="/account"><?= PROFILE ?></a></li>
+                                <li><a href="/account/sign_out"><?= SIGN_OUT ?></a></li>
                             </ul>
                         </li>
-                    <?}?>
+                    <? } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -84,19 +89,19 @@ $graduates = LoadPlugin('Graduates');
 
             <div class="panel wow fadeIn">
                 <div class="panel-heading">
-                    <div class="panel-title"><?=GRADUATE?></div>
+                    <div class="panel-title"><?= GRADUATE ?></div>
                 </div>
                 <div class="panel-body" align="center">
-                    <?$graduates->get();?>
+                    <? $graduates->get(); ?>
                 </div>
             </div>
 
             <div class="panel wow fadeIn">
                 <div class="panel-heading">
-                    <div class="panel-title"><?=EVENTS?></div>
+                    <div class="panel-title"><?= EVENTS ?></div>
                 </div>
                 <div class="panel-body">
-                    <?$events->get()?>
+                    <? $events->get() ?>
                 </div>
             </div>
 

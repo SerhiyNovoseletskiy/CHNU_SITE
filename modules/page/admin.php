@@ -56,7 +56,7 @@ class admin_page extends Controller
         array_push($this->menu, $this->menu_struct);
         unset($this->menu_struct);
 
-        LoadModel('admin','languages');
+        LoadModel('admin', 'languages');
         global $model;
         $this->data = $model->getAll(new languages());
     }
@@ -122,7 +122,7 @@ class admin_page extends Controller
         $this->template = false;
         global $model;
         LoadModel('page', 'page');
-        LoadModel('admin','languages');
+        LoadModel('admin', 'languages');
         $page = new pages();
 
         $page->alias = $_POST['alias'];
@@ -134,12 +134,12 @@ class admin_page extends Controller
 
         $languages = $model->getAll(new languages());
 
-        foreach($languages as $language) {
+        foreach ($languages as $language) {
             $page_content = new page_content();
             $page_content->language = $language->code;
             $page_content->page_id = $id;
-            $page_content->title = $_POST['title_'.$language->code];
-            $page_content->content = $_POST['content_'.$language->code];
+            $page_content->title = $_POST['title_' . $language->code];
+            $page_content->content = $_POST['content_' . $language->code];
             $model->save($page_content);
         }
 
@@ -156,8 +156,8 @@ class admin_page extends Controller
         LoadModel('admin', 'languages');
 
         $page = $model->getById(
-          new pages(),
-          $_POST['page_id']
+            new pages(),
+            $_POST['page_id']
         );
 
         $page->alias = $_POST['alias'];
@@ -166,7 +166,7 @@ class admin_page extends Controller
         $model->update($page);
 
         $languages = $model->getAll(new languages());
-        foreach($languages as $lang) {
+        foreach ($languages as $lang) {
             $con = $model->getRowByparam(
                 new page_content(),
                 array(
@@ -175,8 +175,8 @@ class admin_page extends Controller
                 )
             );
 
-            $con->title = $_POST['title_'.$lang->code];
-            $con->content = $_POST['content_'.$lang->code];
+            $con->title = $_POST['title_' . $lang->code];
+            $con->content = $_POST['content_' . $lang->code];
 
             $model->update($con);
         }
@@ -194,7 +194,7 @@ class admin_page extends Controller
         $page = $model->getById(new pages(), $this->url[5]);
         $content = $model->getByParam(new page_content(), array('page_id' => $page->_page_id));
 
-        foreach($content as $c)
+        foreach ($content as $c)
             $model->delete($c);
 
         $model->delete($page);

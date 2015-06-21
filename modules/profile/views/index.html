@@ -1,14 +1,16 @@
 <div class="row">
     <div class="col-md-5" align="center">
         <img src="/content/avatars/<?=$data['user']->avatar?>" class="thumbnail">
-        <a href="/messages/<?=$data['user']->_user_id?>" class="btn btn-success" style="width: 100%;"><?=WRITE_MESSAGE?></a>
+        <a href="/messages/<?=$data['user']->_user_id?>" class="btn btn-success"
+           style="width: 100%;"><?=WRITE_MESSAGE?></a>
     </div>
 
     <div class="col-md-7">
         <h3><?=$data['info']->sur_name?> <?=$data['info']->first_name?> <?=$data['info']->last_name?></h3>
 
         <ul class="list-group">
-            <li class="list-group-item"><b>Email :</b> <a href="emailto:<?=$data['info']->email?>"><?=$data['info']->email?></a> </li>
+            <li class="list-group-item"><b>Email :</b> <a href="emailto:<?=$data['info']->email?>"><?=$data['info']->
+                email?></a></li>
         </ul>
     </div>
 </div>

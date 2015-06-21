@@ -1,5 +1,7 @@
 <?php
-class v_blog_rubricks {
+
+class v_blog_rubricks
+{
     public $_id;
     public $language;
     public $name;

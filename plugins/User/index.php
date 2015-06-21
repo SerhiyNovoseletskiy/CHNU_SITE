@@ -36,7 +36,8 @@ class User
         return $this->root;
     }
 
-    function isSU() {
+    function isSU()
+    {
         return $this->su;
     }
 
@@ -57,7 +58,7 @@ class User
                 $this->su = ($this->user_group->su == '1');
                 $this->aut = true;
 
-                LoadModel('admin','sign_in_log');
+                LoadModel('admin', 'sign_in_log');
                 $log = new sign_in_log();
                 $log->date = time();
                 $log->IP = $_SERVER[REMOTE_ADDR];

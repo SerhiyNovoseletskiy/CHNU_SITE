@@ -8,7 +8,7 @@ class SiteBulder
 
     function __construct()
     {
-       $this->Route();
+        $this->Route();
     }
 
     function __destruct()
@@ -34,7 +34,7 @@ class SiteBulder
         if (is_file('modules/' . $this->controller . '/index.php')) {
             require_once 'modules/' . $this->controller . '/index.php';
 
-            $this->controller = 'c_'.$this->controller;
+            $this->controller = 'c_' . $this->controller;
 
             if (class_exists($this->controller)) {
                 LoadLanguage($this->url[1]);
@@ -71,7 +71,7 @@ class SiteBulder
 
     private function _404()
     {
-        require_once 'templates/'.TEMPLATE.'/404.html';
+        require_once 'templates/' . TEMPLATE . '/404.html';
     }
 }
 

@@ -2,10 +2,10 @@
 <script src="/plugins/js/tinymce/tinymce.min.js"></script>
 <script>
     tinymce.init({
-        relative_urls : false,
-        convert_urls : false,
+        relative_urls: false,
+        convert_urls: false,
         extended_valid_elements: 'link,form,input',
-                selector: 'textarea', plugins: [
+        selector: 'textarea', plugins: [
             "advlist autolink lists link image charmap print preview hr anchor pagebreak",
             "searchreplace wordcount visualblocks visualchars code fullscreen",
             "insertdatetime media nonbreaking save table contextmenu directionality",
@@ -18,6 +18,7 @@
 <div class="row">
     <form method="POST" action="<?=MODULE_URL?>/update" id="page">
         <input type="hidden" name="page_id" value="<?=$data['page']->_page_id?>">
+
         <div class="col-md-8">
             <div role="tabpanel">
 
@@ -27,8 +28,10 @@
                     $i = 0;
                     foreach($data['languages'] as $language) {
                     ?>
-                    <li role="presentation" <?if ($i == 0){?>class="active"<?}?>><a href="#<?=$language->code?>" aria-controls="<?=$language->code?>" role="tab"
-                                                                                    data-toggle="tab"><?=$language->name?></a></li>
+                    <li role="presentation"
+                    <?if ($i == 0){?>class="active"<?}?>><a href="#<?=$language->code?>"
+                                                            aria-controls="<?=$language->code?>" role="tab"
+                                                            data-toggle="tab"><?=$language->name?></a></li>
                     <?
                     $i++;
                     }
@@ -43,8 +46,10 @@
                     ?>
                     <div role="tabpanel" class="tab-pane <?if ($i == 0){?>active<?}?>" id="<?=$language->code?>">
                         <label><?=PAGE_NAME?></label>
-                        <input type="text" id="title" value="<?=$data[$language->code]->title?>" name="title_<?=$language->code?>" class="form-control" required="true">
-                        <textarea name="content_<?=$language->code?>" style="height: 400px;"><?=$data[$language->code]->content?></textarea>
+                        <input type="text" id="title" value="<?=$data[$language->code]->title?>"
+                               name="title_<?=$language->code?>" class="form-control" required="true">
+                        <textarea name="content_<?=$language->code?>" style="height: 400px;"><?=$data[$language->
+                            code]->content?></textarea>
                     </div>
                     <?
                     $i++;
@@ -57,14 +62,17 @@
         <div class="col-md-4">
 
             <label><?=PAGE_ALIAS?></label>
-            <input type="text" id="alias" name="alias" class="form-control" required="true" value="<?=$data['page']->alias?>">
+            <input type="text" id="alias" name="alias" class="form-control" required="true"
+                   value="<?=$data['page']->alias?>">
 
 
             <label><?=PAGE_KEYWORDS?></label>
-            <input type="text" name="keywords" class="form-control" value="<?=$data['page_info']->keywords?>" value = "<?=$data['page']->keywords?>">
+            <input type="text" name="keywords" class="form-control" value="<?=$data['page_info']->keywords?>"
+                   value="<?=$data['page']->keywords?>">
 
             <label><?=PAGE_DESCRIPTION?></label>
-            <input type="text" name="description" class="form-control" value="<?=$data['page_info']->description?>" value = "<?=$data['page']->description?>">
+            <input type="text" name="description" class="form-control" value="<?=$data['page_info']->description?>"
+                   value="<?=$data['page']->description?>">
         </div>
     </form>
 </div>

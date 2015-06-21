@@ -23,8 +23,8 @@ function LoadModel($module, $model)
 
 function LoadView($module, $view, $data = null, $data1 = null)
 {
-    if (is_file('templates/'.TEMPLATE.'/views/'.$module.'/'.$view.'.html'))
-        require_once 'templates/'.TEMPLATE.'/views/'.$module.'/'.$view.'.html';
+    if (is_file('templates/' . TEMPLATE . '/views/' . $module . '/' . $view . '.html'))
+        require_once 'templates/' . TEMPLATE . '/views/' . $module . '/' . $view . '.html';
     elseif
     (is_file('modules/' . $module . '/views/' . $view . '.html'))
         require_once 'modules/' . $module . '/views/' . $view . '.html';
