@@ -145,6 +145,7 @@ class Model
             array_push($array, $class);
         }
 
+        print $query;
         return $array;
     }
 
