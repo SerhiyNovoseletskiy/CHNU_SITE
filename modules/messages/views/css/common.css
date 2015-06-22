@@ -1,6 +1,3 @@
-#chat-container{
-    height: 100%;
-}
 
 .chat
 {
@@ -38,8 +35,9 @@
     margin-right: 5px;
 }
 
-.panel-body
+#panel-body
 {
     overflow-y: scroll;
-    height: 40%;
+    min-height: 400px;
+    max-height: 400px;
 }

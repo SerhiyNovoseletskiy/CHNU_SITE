@@ -11,6 +11,7 @@ $graduates = LoadPlugin('Graduates');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $meta['title'] ?></title>
     <link rel="stylesheet" href="/templates/chnu/css/style.css">
+    <script src="/templates/chnu/js/script.js"></script>
 </head>
 <body>
 <div class="header-image"></div>
@@ -118,7 +119,6 @@ $graduates = LoadPlugin('Graduates');
     </div>
 </div>
 <div id="up_button"></div>
-<script src="/templates/chnu/js/script.js"></script>
 <script>
     new WOW().init();
 </script>

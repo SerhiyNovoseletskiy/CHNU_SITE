@@ -7,4 +7,8 @@ class v_users {
     public $first_name;
     public $last_name;
     public $sur_name;
+
+    function getName() {
+        return $this->sur_name . ' '. $this->first_name;
+    }
 }

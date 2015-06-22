@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 21 2015 г., 17:44
+-- Время создания: Июн 22 2015 г., 15:01
 -- Версия сервера: 5.6.24
 -- Версия PHP: 5.6.8
 
@@ -64,8 +64,8 @@ CREATE TABLE IF NOT EXISTS `blog_details` (
 --
 
 INSERT INTO `blog_details` (`id`, `blog`, `language`, `title`, `content`) VALUES
-(1, 1, 'ua', '«Якщо не ми, то хто – для воїнів АТО» ', '<p>Кафедра музики факультету педагогіки, психології та соціальної роботи Чернівецького національного університету імені Юрія Федьковича на високій мистецькій ноті завершила навчальний рік благодійним концертом. Кошти, зібрані на заході, уже передані ГО Координаційний штаб &laquo;Буковина &ndash; українському війську&raquo; і будуть використані на нагальні потреби наших буковинських солдат на передовій.<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" data-mce-resize="false" /><!-- pagebreak --></p>\r\n<p>Знаний університетський колектив упродовж поточного року не раз долучався до подібних благодійних акції. Цього разу таким концертом завершили навчальний рік. Мистецький захід&nbsp;&nbsp;відбувся в Мармуровій залі. Дві години поспіль звучала фортепіанна музика. Ініціатори спонукали аудиторію помислами повернутися до наших воїнів на Сході України, щиро і по-людськи перейнятися їх проблемами.</p>\r\n<p>Почин кафедри музики привітав ректор Степан Мельничук, зазначивши, що такий крок вартий уваги і наслідування. Він першим показав приклад благодійності, підійшовши до скриньки. Так само вчинили й проректор з науково-педагогічної роботи з питань навчально-виховного процесу Тамара Марусик і декан факультету Ігор Зварич.</p>\r\n<p>Під склепіннями Мармурової зали зринали світові класичні твори Г. Манчіні, Г. Генделя, Ф. Шопена, Й. Брамса, В.-А. Моцарта, П. Чайковського, С. Гулака-Артемовського, Я. Степового, Г. Майбороди, Т. Емануеля, І. Шамо, М. Лисенка, С. Рахманінова та інших композиторів. Прозвучало майже 30 творів під музичний супровід фортепіано, бандури, скрипки, гітари, акордеону. Серед солістів &ndash; Марина Герелюк, Іванна Старик, Яна Кімак, Олександра Гудима, Діана Олійник, Наталія та Аліна Руснаки, Лариса Петечел, Мар&rsquo;яна Українець, Нік Гаврилов, Петро Рясенко, Ангеліна Ончуленко, Юрій Томко, Вікторія та Юлія Білінські, Андрій Гуцул, Святослава Дерда, Богдан Троян, Ігор Гончарук, Віталій Любинецький та Надія Штефанюк. Крапку у благодійному вчинкові поставив заслужений артист України доцент Іван Дерда. Він виконав українську народну пісню, яка має понад 15 мотивів-звучань &ndash; &laquo;Ой, попід гай зелененький&raquo;.</p>\r\n<p>За концерт учасникам подякували модератор заходу, завідувач кафедри музики доцент Вадим Лісовий і доцент Олександр Залуцький. Сутність людського життя в усі часи і епохи вимірювалася за ціннісною шкалою вартостей. На кафедрі музики ЧНУ сказали: &laquo;Якщо не ми, то хто &ndash; для воїнів АТО&raquo;. Сказали і слова втілили у реальність. У скриньці виявилося 3&nbsp;153 грн. Їх передали туди, де димлять східні кордони Вітчизни.</p>'),
-(2, 1, 'en', '"If not us, then who - for the soldiers ATO"', '<p>Department of Music faculty of pedagogy, psychology and social work Chernivtsi University on a high note finished art school year charitable concert. Funds raised at the event, has already passed the NGO Coordination Staff "Bucovina - Ukrainian army" and will be used for immediate needs Bukovynian our soldiers on the front line.<br />Well-known university staff during the current year, repeatedly became involved in the charity of such shares. This time the concert finished this academic year. Art event was held in the Marble Hall. Two hours of consecutive sounding piano music. The initiators of the audience prompted thoughts back to our soldiers in the east of Ukraine frankly and humanly feel their problems.</p>\r\n<p>The initiative of the Department of Music welcomed the Rector Stepan Melnychuk, noting that such a move worthy of attention and imitation. He first showed an example of charity, going to the mailbox. So did the rector and with research and educational work on the educational process and Marusyk Tamara Dean of the Faculty Igor Zvarych.</p>\r\n<p>Under the arches of marble halls zrynaly world classical works G. Mancini, G. Handel, Chopin, Brahms, V.-A. Mozart, Tchaikovsky, S. Hulak-Artemovs''kyj, J. Steppe, G. Maiboroda, Emanuel T., I. Shamo Lysenko, Rachmaninov and other composers. There was nearly 30 works in piano music, bandura, violin, guitar, accordion. Among the soloists - Marina Herelyuk, Joanna old man, John Kimak, Alexander Hudyma, Diana Oliynyk, Natalia and Alina Rusnak, Larissa Petechel, Marian Ukrainian Nick Gavrilov, Peter Ryasenko, Onchulenko Angelina, George Tomka, Victoria and Julia Bilinsky, Andrew Gutsul , Svyatoslav Derda, Bogdan Trojan, Igor Goncharuk, Vitaly Lyubynetskyy and Nadia Shtefanyuk. Point in charitable actions set Honored Artist of Ukraine Ivan Associate Derda. He performed Ukrainian folk song that has more than 15 motifs, sounds - "Oh, grove under greenbacks."</p>\r\n<p>During the concert participants thanked the moderator of the event, Head of Music Associate Professor Vadim Forest and Associate Professor Alexander Zalutsky. The essence of human life in all times and ages measured according to valuation scale values. The department of music ChNU said: "If not us, then who - for ATU soldiers." They said the words embodied in reality. In the box turned 3153 USD. They passed where smoke eastern borders of the Fatherland.</p>'),
+(1, 1, 'ua', '«Якщо не ми, то хто – для воїнів АТО» ', '<p>Кафедра музики факультету педагогіки, психології та соціальної роботи Чернівецького національного університету імені Юрія Федьковича на високій мистецькій ноті завершила навчальний рік благодійним концертом. Кошти, зібрані на заході, уже передані ГО Координаційний штаб &laquo;Буковина &ndash; українському війську&raquo; і будуть використані на нагальні потреби наших буковинських солдат на передовій.<!-- pagebreak --></p>\r\n<p>Знаний університетський колектив упродовж поточного року не раз долучався до подібних благодійних акції. Цього разу таким концертом завершили навчальний рік. Мистецький захід&nbsp;&nbsp;відбувся в Мармуровій залі. Дві години поспіль звучала фортепіанна музика. Ініціатори спонукали аудиторію помислами повернутися до наших воїнів на Сході України, щиро і по-людськи перейнятися їх проблемами.</p>\r\n<p>Почин кафедри музики привітав ректор Степан Мельничук, зазначивши, що такий крок вартий уваги і наслідування. Він першим показав приклад благодійності, підійшовши до скриньки. Так само вчинили й проректор з науково-педагогічної роботи з питань навчально-виховного процесу Тамара Марусик і декан факультету Ігор Зварич.</p>\r\n<p>Під склепіннями Мармурової зали зринали світові класичні твори Г. Манчіні, Г. Генделя, Ф. Шопена, Й. Брамса, В.-А. Моцарта, П. Чайковського, С. Гулака-Артемовського, Я. Степового, Г. Майбороди, Т. Емануеля, І. Шамо, М. Лисенка, С. Рахманінова та інших композиторів. Прозвучало майже 30 творів під музичний супровід фортепіано, бандури, скрипки, гітари, акордеону. Серед солістів &ndash; Марина Герелюк, Іванна Старик, Яна Кімак, Олександра Гудима, Діана Олійник, Наталія та Аліна Руснаки, Лариса Петечел, Мар&rsquo;яна Українець, Нік Гаврилов, Петро Рясенко, Ангеліна Ончуленко, Юрій Томко, Вікторія та Юлія Білінські, Андрій Гуцул, Святослава Дерда, Богдан Троян, Ігор Гончарук, Віталій Любинецький та Надія Штефанюк. Крапку у благодійному вчинкові поставив заслужений артист України доцент Іван Дерда. Він виконав українську народну пісню, яка має понад 15 мотивів-звучань &ndash; &laquo;Ой, попід гай зелененький&raquo;.</p>\r\n<p>За концерт учасникам подякували модератор заходу, завідувач кафедри музики доцент Вадим Лісовий і доцент Олександр Залуцький. Сутність людського життя в усі часи і епохи вимірювалася за ціннісною шкалою вартостей. На кафедрі музики ЧНУ сказали: &laquo;Якщо не ми, то хто &ndash; для воїнів АТО&raquo;. Сказали і слова втілили у реальність. У скриньці виявилося 3&nbsp;153 грн. Їх передали туди, де димлять східні кордони Вітчизни.</p>'),
+(2, 1, 'en', '', '<p>Department of Music faculty of pedagogy, psychology and social work Chernivtsi University on a high note finished art school year charitable concert. Funds raised at the event, has already passed the NGO Coordination Staff "Bucovina - Ukrainian army" and will be used for immediate needs Bukovynian our soldiers on the front line.<br />Well-known university staff during the current year, repeatedly became involved in the charity of such shares. This time the concert finished this academic year. Art event was held in the Marble Hall. Two hours of consecutive sounding piano music. The initiators of the audience prompted thoughts back to our soldiers in the east of Ukraine frankly and humanly feel their problems.<!-- pagebreak --></p>\r\n<p>The initiative of the Department of Music welcomed the Rector Stepan Melnychuk, noting that such a move worthy of attention and imitation. He first showed an example of charity, going to the mailbox. So did the rector and with research and educational work on the educational process and Marusyk Tamara Dean of the Faculty Igor Zvarych.</p>\r\n<p>Under the arches of marble halls zrynaly world classical works G. Mancini, G. Handel, Chopin, Brahms, V.-A. Mozart, Tchaikovsky, S. Hulak-Artemovs''kyj, J. Steppe, G. Maiboroda, Emanuel T., I. Shamo Lysenko, Rachmaninov and other composers. There was nearly 30 works in piano music, bandura, violin, guitar, accordion. Among the soloists - Marina Herelyuk, Joanna old man, John Kimak, Alexander Hudyma, Diana Oliynyk, Natalia and Alina Rusnak, Larissa Petechel, Marian Ukrainian Nick Gavrilov, Peter Ryasenko, Onchulenko Angelina, George Tomka, Victoria and Julia Bilinsky, Andrew Gutsul , Svyatoslav Derda, Bogdan Trojan, Igor Goncharuk, Vitaly Lyubynetskyy and Nadia Shtefanyuk. Point in charitable actions set Honored Artist of Ukraine Ivan Associate Derda. He performed Ukrainian folk song that has more than 15 motifs, sounds - "Oh, grove under greenbacks."</p>\r\n<p>During the concert participants thanked the moderator of the event, Head of Music Associate Professor Vadim Forest and Associate Professor Alexander Zalutsky. The essence of human life in all times and ages measured according to valuation scale values. The department of music ChNU said: "If not us, then who - for ATU soldiers." They said the words embodied in reality. In the box turned 3153 USD. They passed where smoke eastern borders of the Fatherland.</p>'),
 (3, 2, 'ua', 'Умови роботи журналістів в Україні та США: відкрита дискусія як спосіб обмінятися досвідом ', '<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Вчора 17 червня у Блакитній залі Чернівецького національного університету ім. Ю.Федьковичавідбулася публічна дискусія між американськими дипломатами та представниками чернівецьких ЗМІ. Зустріч організована за підтримки Посольства США в Україні. Під час дискусії сторони обмінювалися міркуваннями стосовно ролі журналістики в суспільстві, аналізували чинники, що впливають на формування якісної медіасфери, і зіставляли український та американський досвід у цьому напрямку. Відкрили дискусію завідувач кафедри журналістики Любов Василик та ректор Чернівецького національного університету Степан Мельничук. З американської сторони вобговоренні взяли участь Посол Кліффорд Бонд, координатор технічної допомоги (Посольство США); Верая (Кейт) Сомвонгсірі, директор офісу демократії та управління (Агентство США з міжнародного розвитку (USAID)) та Віктор Рачкевич (офіс демократії та управління, Агентство США з міжнародного розвитку (USAID)).<!-- pagebreak --></span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Як повідомив поважним гостям Степан Мельничук, Чернівецький університет, готуючи фахівців журналістики, орієнтує їх також і на міжнародну співпрацю. Хорошим прикладом тому є проект співпраці між Чернівцями та Пассау (Німеччина), де молоді журналісти, студенти ЧНУ мають можливість наочно побачити і зіставити українську та німецьку медіасфери.</span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">На самому початку зустрічі Кліффорд Бонд уточнив, що їм дуже важливо почути думку українських журналістів стосовно того, як же розвивається журналістика в регіоні, з якими проблемами вона має справу і які шляхи вирішення цих труднощів уже існують. Одне з перших питань, яке порушилося, &ndash; редакційна політика, залежність/незалежність засобів ЗМІ. Посол зазначив: в Америці це питання є також актуальним. Проте громадський вибір також може бути засобом тесту на об&rsquo;єктивність: заангажовані ЗМІ просто користуються меншим попитом.</span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Про наявні проблеми українських, в тому числі і буковинських, ЗМІ розповів головний редактор громадсько-політичної газети &laquo;Доба&raquo; Володимир Стефанець. Як зазначив Володимир Богданович, особливо важливою в контексті загальної незалежності видання є його фінансова незалежність. Особливо це стосується друкованих ЗМІ. А ось стосовно доступу до інформації чи свободи слова &ndash; з цим у Чернівцях проблем немає.</span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Американська делегація зійшлася на думці, що Україна проходить період становлення, окрім прямого військового конфлікту в нашій державі відбувається також інформаційна війна &ndash; і саме від компетенції українських журналістів залежить, якою ж буде відповідь на потік пропаганди, наскільки населення вчасно отримуватиме суспільно важливу інформацію тощо. Америка готова допомагати українським ЗМІ - підсумували за результатами зустрічі.</span></p>'),
 (4, 2, 'en', 'Умови роботи журналістів в Україні та США: відкрита дискусія як спосіб обмінятися досвідом ', '<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Вчора 17 червня у Блакитній залі Чернівецького національного університету ім. Ю.Федьковичавідбулася публічна дискусія між американськими дипломатами та представниками чернівецьких ЗМІ. Зустріч організована за підтримки Посольства США в Україні. Під час дискусії сторони обмінювалися міркуваннями стосовно ролі журналістики в суспільстві, аналізували чинники, що впливають на формування якісної медіасфери, і зіставляли український та американський досвід у цьому напрямку. Відкрили дискусію завідувач кафедри журналістики Любов Василик та ректор Чернівецького національного університету Степан Мельничук. З американської сторони вобговоренні взяли участь Посол Кліффорд Бонд, координатор технічної допомоги (Посольство США); Верая (Кейт) Сомвонгсірі, директор офісу демократії та управління (Агентство США з міжнародного розвитку (USAID)) та Віктор Рачкевич (офіс демократії та управління, Агентство США з міжнародного розвитку (USAID)).<!-- pagebreak --></span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Як повідомив поважним гостям Степан Мельничук, Чернівецький університет, готуючи фахівців журналістики, орієнтує їх також і на міжнародну співпрацю. Хорошим прикладом тому є проект співпраці між Чернівцями та Пассау (Німеччина), де молоді журналісти, студенти ЧНУ мають можливість наочно побачити і зіставити українську та німецьку медіасфери.</span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">На самому початку зустрічі Кліффорд Бонд уточнив, що їм дуже важливо почути думку українських журналістів стосовно того, як же розвивається журналістика в регіоні, з якими проблемами вона має справу і які шляхи вирішення цих труднощів уже існують. Одне з перших питань, яке порушилося, &ndash; редакційна політика, залежність/незалежність засобів ЗМІ. Посол зазначив: в Америці це питання є також актуальним. Проте громадський вибір також може бути засобом тесту на об&rsquo;єктивність: заангажовані ЗМІ просто користуються меншим попитом.</span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Про наявні проблеми українських, в тому числі і буковинських, ЗМІ розповів головний редактор громадсько-політичної газети &laquo;Доба&raquo; Володимир Стефанець. Як зазначив Володимир Богданович, особливо важливою в контексті загальної незалежності видання є його фінансова незалежність. Особливо це стосується друкованих ЗМІ. А ось стосовно доступу до інформації чи свободи слова &ndash; з цим у Чернівцях проблем немає.</span></p>\r\n<p style="color: #3c3c3c; font-size: 13.3333330154419px; font-family: Tahoma, Arial, sans-serif;"><span lang="UK" style="font-size: 10pt; font-family: Arial, sans-serif;">Американська делегація зійшлася на думці, що Україна проходить період становлення, окрім прямого військового конфлікту в нашій державі відбувається також інформаційна війна &ndash; і саме від компетенції українських журналістів залежить, якою ж буде відповідь на потік пропаганди, наскільки населення вчасно отримуватиме суспільно важливу інформацію тощо. Америка готова допомагати українським ЗМІ - підсумували за результатами зустрічі.</span></p>'),
 (5, 3, 'ua', 'Якась подія ', '<p>Подія :))</p>'),
@@ -119,21 +119,20 @@ INSERT INTO `blog_rubrick_details` (`id`, `name`, `language`, `rubrick`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `department`
+-- Структура таблицы `department`
 --
 
 CREATE TABLE IF NOT EXISTS `department` (
-  `id` tinyint(3) NOT NULL AUTO_INCREMENT COMMENT 'ID of department',
-  `name` varchar(50) NOT NULL COMMENT 'Name of department',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `id` tinyint(3) NOT NULL COMMENT 'ID of department',
+  `name` varchar(50) NOT NULL COMMENT 'Name of department'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `department`
+-- Дамп данных таблицы `department`
 --
 
 INSERT INTO `department` (`id`, `name`) VALUES
-  (2, 'Фізико технічних та комп''ютерних наук');
+(1, 'Фізико технічних та комп''ютерних наук');
 
 -- --------------------------------------------------------
 
@@ -154,6 +153,43 @@ CREATE TABLE IF NOT EXISTS `languages` (
 INSERT INTO `languages` (`id`, `name`, `code`) VALUES
 (1, 'Українська', 'ua'),
 (3, 'English', 'en');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL,
+  `from_user` int(11) NOT NULL,
+  `to_user` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `isRead` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `from_user`, `to_user`, `time`, `message`, `isRead`) VALUES
+(1, 1, 5, 1434971834, 'Привіт', 1),
+(2, 5, 1, 1434971965, 'Привіт :)', 1),
+(3, 5, 1, 1434971967, 'Як справи ?', 1),
+(4, 1, 5, 1434971975, 'Та все гаразд :)', 1),
+(5, 1, 5, 1434974264, 'Тест', 1),
+(6, 5, 1, 1434974278, 'Дуже смішно', 1),
+(7, 5, 1, 1434974309, 'Але що тут робити коли збільшується число записів ?', 1),
+(8, 5, 1, 1434974442, '?', 1),
+(9, 1, 5, 1434974450, 'Не знаю', 1),
+(10, 1, 5, 1434975131, 'смсм', 1),
+(11, 1, 5, 1434975570, 'Ntfasdfsdfsd', 1),
+(12, 5, 1, 1434975588, 'Да', 1),
+(13, 1, 3, 1434975949, 'fasdfsd', 0),
+(14, 1, 1, 1434975967, 'Привіт', 1),
+(15, 1, 1, 1434975971, 'Привіт', 1),
+(16, 5, 1, 1434977551, 'ГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГ', 1);
 
 -- --------------------------------------------------------
 
@@ -231,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `sign_in_log` (
   `IP` varchar(20) NOT NULL,
   `date` int(11) NOT NULL,
   `login` varchar(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `sign_in_log`
@@ -246,7 +282,12 @@ INSERT INTO `sign_in_log` (`log_id`, `IP`, `date`, `login`) VALUES
 (6, '127.0.0.1', 1434889258, 'serrg1994'),
 (7, '127.0.0.1', 1434891134, 'admin'),
 (8, '127.0.0.1', 1434891960, 'admin'),
-(9, '127.0.0.1', 1434896394, 'serrg1994');
+(9, '127.0.0.1', 1434896394, 'serrg1994'),
+(10, '127.0.0.1', 1434901579, 'admin'),
+(11, '127.0.0.1', 1434914348, 'admin'),
+(12, '127.0.0.1', 1434969666, 'admin'),
+(13, '127.0.0.1', 1434973618, 'serrg1994'),
+(14, '127.0.0.1', 1434977142, 'serrg1994');
 
 -- --------------------------------------------------------
 
@@ -298,32 +339,26 @@ INSERT INTO `user_groups` (`group_id`, `name`, `root`, `su`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `user_info` (
-  `info_id` int(11) NOT NULL AUTO_INCREMENT,
+  `info_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `sur_name` varchar(100) NOT NULL,
   `email` varchar(150) NOT NULL,
   `telephone` varchar(100) NOT NULL,
-  `birthday` date NOT NULL COMMENT 'Birthday of user',
-  `entry_year` smallint(4) NOT NULL COMMENT 'Year when user entered to university',
-  `graduation_year` smallint(4) NOT NULL COMMENT 'Year when user graduated from university',
-  `department_id` tinyint(3) NOT NULL COMMENT 'Id of department',
-  PRIMARY KEY (`info_id`),
-  KEY `user_id` (`user_id`),
-  KEY `department_id` (`department_id`),
-  KEY `department_id_2` (`department_id`),
-  KEY `department_id_3` (`department_id`),
-  KEY `department_id_4` (`department_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `birthday` date NOT NULL,
+  `entry_year` smallint(4) NOT NULL,
+  `gradation_year` smallint(4) NOT NULL,
+  `department_id` tinyint(3) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `user_info`
 --
 
-INSERT INTO `user_info` (`info_id`, `user_id`, `first_name`, `last_name`, `sur_name`, `email`, `telephone`, `birthday`, `entry_year`, `graduation_year`, `department_id`) VALUES
-  (1, 1, 'Сергій', 'Борисович', 'Новоселецький', 'novoseletskiyserhiy@gmail.com', '380672877665', '0000-00-00', 0, 0, 2),
-  (3, 5, 'Serhiy', 'Borisovitch', 'Novoseletskiy', 'serhiynovos@mail.ru', '0672877665', '0000-00-00', 0, 0, 2);
+INSERT INTO `user_info` (`info_id`, `user_id`, `first_name`, `last_name`, `sur_name`, `email`, `telephone`, `birthday`, `entry_year`, `gradation_year`, `department_id`) VALUES
+(1, 1, 'Сергій', 'Борисович', 'Новоселецький', 'novoseletskiyserhiy@gmail.com', '380672877665', '2015-06-08', 2, 444, 1),
+(3, 5, 'Сергій', 'Борисович', 'Новоселецький', 'serhiynovos@mail.ru', '0672877665', '2014-09-01', 2010, 2010, 1);
 
 -- --------------------------------------------------------
 
@@ -390,6 +425,21 @@ CREATE TABLE IF NOT EXISTS `v_page` (
 -- --------------------------------------------------------
 
 --
+-- Дублирующая структура для представления `v_users`
+--
+CREATE TABLE IF NOT EXISTS `v_users` (
+`user_id` int(11)
+,`login` varchar(50)
+,`avatar` varchar(50)
+,`group_id` int(11)
+,`first_name` varchar(100)
+,`last_name` varchar(100)
+,`sur_name` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `widgets`
 --
 
@@ -436,6 +486,15 @@ DROP TABLE IF EXISTS `v_page`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_page` AS select `p`.`page_id` AS `page_id`,`c`.`title` AS `title`,`p`.`alias` AS `alias`,`c`.`language` AS `language`,`c`.`content` AS `content` from (`pages` `p` join `page_content` `c` on((`p`.`page_id` = `c`.`page_id`)));
 
+-- --------------------------------------------------------
+
+--
+-- Структура для представления `v_users`
+--
+DROP TABLE IF EXISTS `v_users`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_users` AS select `users`.`user_id` AS `user_id`,`users`.`login` AS `login`,`users`.`avatar` AS `avatar`,`users`.`group_id` AS `group_id`,`user_info`.`first_name` AS `first_name`,`user_info`.`last_name` AS `last_name`,`user_info`.`sur_name` AS `sur_name` from (`users` join `user_info` on((`users`.`user_id` = `user_info`.`user_id`)));
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -470,11 +529,26 @@ ALTER TABLE `blog_rubrick_details`
   ADD KEY `rubrick` (`rubrick`);
 
 --
+-- Индексы таблицы `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `code` (`code`);
+
+--
+-- Индексы таблицы `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pk_user_1` (`from_user`),
+  ADD KEY `to_user` (`to_user`),
+  ADD KEY `from_user` (`from_user`);
 
 --
 -- Индексы таблицы `modules`
@@ -553,10 +627,20 @@ ALTER TABLE `blog_rubricks`
 ALTER TABLE `blog_rubrick_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT для таблицы `department`
+--
+ALTER TABLE `department`
+  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT COMMENT 'ID of department',AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT для таблицы `languages`
 --
 ALTER TABLE `languages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `modules`
 --
@@ -576,7 +660,7 @@ ALTER TABLE `page_content`
 -- AUTO_INCREMENT для таблицы `sign_in_log`
 --
 ALTER TABLE `sign_in_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --

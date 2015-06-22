@@ -1,0 +1,42 @@
+<?foreach($data['messages'] as $message) {
+    if ($message['to_user'] == $data['me']) {?>
+<li class="left clearfix <?if ($message['isRead'] == 0) echo 'bg-warning'?>">
+    <span class="chat-img pull-left">
+                            <img src="/content/avatars/<?=$data[$message['from_user']]->avatar?>" width="50"
+                                 class="img-circle"/>
+                        </span>
+
+    <div class="chat-body clearfix">
+        <div class="header">
+            <strong class="primary-font"><?=$data[$message['from_user']]->sur_name?> <?=$data[$message['from_user']]->
+                first_name?>.</strong>
+            <small class="pull-right text-muted">
+                <span class="glyphicon glyphicon-time"></span><?=date('H:i:s <b>d-m-Y</b>', $message['time'])?>
+            </small>
+        </div>
+        <p>
+            <?=htmlspecialchars($message['message'])?>
+        </p>
+    </div>
+</li>
+<? }  else {?>
+<li class="right clearfix <?if ($message['isRead'] == 0) echo 'bg-warning'?>"><span class="chat-img pull-right">
+                          <img src="/content/avatars/<?=$data[$message['from_user']]->avatar?>" width="50"
+                               class="img-circle"/>
+                        </span>
+
+    <div class="header">
+        <strong class="primary-font"><?=$data[$message['from_user']]->sur_name?> <?=$data[$message['from_user']]->
+            first_name?>.</strong>
+        <small class="pull-right text-muted">
+            <span class="glyphicon glyphicon-time"></span><?=date('H:i:s <b>d-m-Y</b>', $message['time'])?>
+        </small>
+    </div>
+    <p>
+        <?=htmlspecialchars($message['message'])?>
+    </p>
+</li>
+
+<?}
+}
+?>

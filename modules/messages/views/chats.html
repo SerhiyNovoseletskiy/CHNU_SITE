@@ -1,0 +1,21 @@
+<table class="table">
+    <?foreach($data as $chat) {?>
+    <tr>
+        <td align="center" width="70">
+            <img class="img-circle" src="/content/avatars/<?=$chat['user']->avatar?>" width="55">
+            <div class="clearfix"></div>
+            <?=$chat['user']->getName()?>
+        </td>
+
+        <td class="<?if ($chat['message']['isRead'] == '0') echo 'bg-warning'?>">
+            <a href="/messages/<?=$chat['user']->_user_id?>"><?=htmlspecialchars($chat['message']['message'])?></a>
+        </td>
+
+        <td>
+            <small class="pull-right text-muted">
+                <span class="glyphicon glyphicon-time"></span> <?=date('H:i:s <b>d-m-Y</b>', $chat['message']['time'])?>
+            </small>
+        </td>
+    </tr>
+    <?}?>
+</table>
