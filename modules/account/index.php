@@ -7,8 +7,6 @@ class c_account extends Controller{
     }
 
     function _index() {
-        LoadLanguage('admin');
-        LoadLanguage('ecommerce');
         global $model;
         $this->meta['title'] = MY_ACCOUNT;
         $this->data['user'] = $this->user->user;

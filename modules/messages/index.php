@@ -4,6 +4,14 @@ class c_messages extends Controller
 {
     function _index()
     {
+        $user = LoadPlugin('User');
+
+        if (!$user->isAuth()) {
+            header('Location: /');
+            return;
+        }
+
+        $this->meta['title'] = MESSAGES;
         if (!empty($this->url[2])) {
             $this->view = 'messages';
             $this->data = $this->url[2];
@@ -13,7 +21,6 @@ class c_messages extends Controller
             LoadModel('messages', 'messages');
             LoadModel('admin', 'v_users');
 
-            $user = LoadPlugin('User');
 
             $senders = $model->getByParam(
                 new messages(),

@@ -79,14 +79,6 @@ $graduates = LoadPlugin('Graduates');
 
         <!-- Sidebar -->
         <div class="col-md-4">
-            <div class="panel wow fadeIn">
-                <div class="panel-heading">
-                    <div class="panel-title">Гордість ЧНУ</div>
-                </div>
-                <div class="panel-body">
-                    <img src="images/baner.png" class="thumbnail">
-                </div>
-            </div>
 
             <div class="panel wow fadeIn">
                 <div class="panel-heading">
@@ -114,7 +106,6 @@ $graduates = LoadPlugin('Graduates');
         <footer class="footer wow fadeIn">
             ЧНУ &copy; 2015
 
-            <a href="#">Виконали студенти групи 343-ск</a>
         </footer>
     </div>
 </div>
