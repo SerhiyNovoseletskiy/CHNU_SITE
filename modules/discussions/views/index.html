@@ -1,0 +1,35 @@
+<button class="btn btn-primary" id='createDiscussion'><?=CREATE_DISCUSSION?></button>
+<div class="clearfix"></div>
+<br>
+
+<div class="panel panel-default" id="form">
+    <div class="panel-heading">
+        <h3 class="panel-title"><?=CREATE_DISCUSSION?></h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="/discussions/create" method="post" id = "create">
+            <input class="form-control" name="name" placeholder="<?=DISCUSSION_NAME?>" required="">
+        </form>
+    </div>
+
+    <div class="panel-footer">
+        <button class="btn btn-success" form="create" type="submit"><?=SAVE?></button>
+    </div>
+</div>
+
+<table class="table">
+    <?foreach($data as $dis) {?>
+    <tr>
+        <td><a href="/discussions/discussion/<?=$dis->_id?>"><?=$dis->name?></a> </td>
+    </tr>
+    <?}?>
+</table>
+
+<script>
+    $('#form').hide();
+
+    $('#createDiscussion').click(function() {
+       $('#form').fadeIn();
+    });
+</script>

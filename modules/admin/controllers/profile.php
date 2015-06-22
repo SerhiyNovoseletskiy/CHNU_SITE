@@ -63,7 +63,7 @@ class c_profile extends Controller
         $user_info->email = $_POST['email'];
         $user_info->telephone = $_POST['telephone'];
 
-        // TODO check fields
+        //  TODO check fields
         $user_info->birthday = $_POST['birthday'];
         $user_info->entry_year = $_POST['entry_year'];
         $user_info->graduation_year = $_POST['graduation_year'];

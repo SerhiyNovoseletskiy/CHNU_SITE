@@ -1,5 +1,4 @@
 <?
-include_once 'languages/' . LANGUAGE . '.common.php';
 $user = LoadPlugin('User');
 $events = LoadPlugin('events');
 $graduates = LoadPlugin('Graduates');
@@ -58,6 +57,7 @@ $graduates = LoadPlugin('Graduates');
                                     class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/messages"><?= MESSAGES ?></a></li>
+                                <li><a href="/discussions"><?= DISCUSSIONS ?></a></li>
                                 <li><a href="/account"><?= PROFILE ?></a></li>
                                 <li><a href="/account/sign_out"><?= SIGN_OUT ?></a></li>
                             </ul>
