@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 22 2015 г., 15:01
+-- Время создания: Июн 22 2015 г., 19:49
 -- Версия сервера: 5.6.24
 -- Версия PHP: 5.6.8
 
@@ -137,6 +137,56 @@ INSERT INTO `department` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `discussions`
+--
+
+CREATE TABLE IF NOT EXISTS `discussions` (
+  `id` int(11) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `user` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `discussions`
+--
+
+INSERT INTO `discussions` (`id`, `name`, `user`) VALUES
+(1, 'Обговорення 1', 5),
+(3, 'Обговорення 2', 5),
+(4, 'Dota', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `discussion_messages`
+--
+
+CREATE TABLE IF NOT EXISTS `discussion_messages` (
+  `id` int(11) NOT NULL,
+  `discussion` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  `message` tinytext NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `discussion_messages`
+--
+
+INSERT INTO `discussion_messages` (`id`, `discussion`, `user`, `time`, `message`) VALUES
+(1, 1, 5, 1123456666, 'Всім привіт'),
+(2, 1, 5, 1434994397, 'fdf'),
+(3, 4, 5, 1434994425, 'Go в дотку'),
+(4, 4, 1, 1434994577, '+'),
+(5, 4, 5, 1434994671, 'Чи може в контру ?'),
+(6, 4, 5, 1434994721, 'ААААААААААААААААААААААААААААААААААААААААААААААААААААААААА'),
+(7, 4, 5, 1434994734, 'БББББББББББББББББББББББББББББББББББББББББББББББББББББББ'),
+(8, 3, 5, 1434994745, 'Тест'),
+(9, 3, 1, 1434994756, 'Тест');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `languages`
 --
 
@@ -167,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `time` int(11) NOT NULL,
   `message` text NOT NULL,
   `isRead` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=164 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `messages`
@@ -189,7 +239,154 @@ INSERT INTO `messages` (`id`, `from_user`, `to_user`, `time`, `message`, `isRead
 (13, 1, 3, 1434975949, 'fasdfsd', 0),
 (14, 1, 1, 1434975967, 'Привіт', 1),
 (15, 1, 1, 1434975971, 'Привіт', 1),
-(16, 5, 1, 1434977551, 'ГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГ', 1);
+(16, 5, 1, 1434977551, 'ГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГГ', 1),
+(17, 1, 5, 1434978124, 'Тестове повідомлення', 1),
+(18, 1, 5, 1434978174, 'Ще одне', 1),
+(19, 5, 1, 1434978246, 'Я його отримав :)))', 1),
+(20, 5, 1, 1434978268, '<script>alert(''XSS'')</script>', 1),
+(21, 1, 5, 1434978292, 'не вдалось зробити хахахааах', 1),
+(22, 1, 6, 1434979509, 'Лох', 0),
+(23, 5, 1, 1434981275, 'ав', 1),
+(24, 5, 1, 1434981294, 'аів', 1),
+(25, 5, 1, 1434981294, 'афів', 1),
+(26, 5, 1, 1434981294, 'афів', 1),
+(27, 5, 1, 1434981294, 'а', 1),
+(28, 5, 1, 1434981294, 'фіва', 1),
+(29, 5, 1, 1434981294, 'фів', 1),
+(30, 5, 1, 1434981295, 'афів', 1),
+(31, 5, 1, 1434981295, 'а', 1),
+(32, 5, 1, 1434981295, 'фів', 1),
+(33, 5, 1, 1434981295, 'афів', 1),
+(34, 5, 1, 1434981295, 'а', 1),
+(35, 5, 1, 1434981295, 'фів', 1),
+(36, 5, 1, 1434981295, 'афів', 1),
+(37, 5, 1, 1434981295, 'а', 1),
+(38, 5, 1, 1434981296, 'фіва', 1),
+(39, 5, 1, 1434981296, 'фів', 1),
+(40, 5, 1, 1434981296, 'афів', 1),
+(41, 5, 1, 1434981296, 'а', 1),
+(42, 5, 1, 1434981296, 'фів фіва', 1),
+(43, 5, 1, 1434981297, 'фів', 1),
+(44, 5, 1, 1434981297, 'аів', 1),
+(45, 5, 1, 1434981297, ' ', 1),
+(46, 5, 1, 1434981297, 'фів', 1),
+(47, 5, 1, 1434981297, 'афів', 1),
+(48, 5, 1, 1434981297, 'а', 1),
+(49, 5, 1, 1434981297, 'фіва', 1),
+(50, 5, 1, 1434981298, 'фів', 1),
+(51, 5, 1, 1434981298, 'а', 1),
+(52, 5, 1, 1434981298, 'фіва', 1),
+(53, 5, 1, 1434981298, 'фів', 1),
+(54, 5, 1, 1434981298, 'а', 1),
+(55, 5, 1, 1434981298, 'фі іва', 1),
+(56, 5, 1, 1434981299, 'фів', 1),
+(57, 5, 1, 1434981299, 'афів', 1),
+(58, 5, 1, 1434981299, 'афів', 1),
+(59, 5, 1, 1434981299, 'а', 1),
+(60, 5, 1, 1434981299, 'фіва ', 1),
+(61, 5, 1, 1434981299, 'фів', 1),
+(62, 5, 1, 1434981300, 'аіф', 1),
+(63, 5, 1, 1434981300, 'фів', 1),
+(64, 5, 1, 1434981300, 'аів', 1),
+(65, 5, 1, 1434981300, 'а', 1),
+(66, 5, 1, 1434981300, 'ф фів', 1),
+(67, 5, 1, 1434981301, 'а', 1),
+(68, 5, 1, 1434981301, 'фіва', 1),
+(69, 5, 1, 1434981301, 'фі фів', 1),
+(70, 5, 1, 1434981301, 'афів', 1),
+(71, 5, 1, 1434981302, 'а', 1),
+(72, 5, 1, 1434981302, 'івфа', 1),
+(73, 5, 1, 1434981302, 'фів', 1),
+(74, 5, 1, 1434981302, ' ів', 1),
+(75, 5, 1, 1434981302, 'афі', 1),
+(76, 5, 1, 1434981303, 'в ', 1),
+(77, 5, 1, 1434981303, 'іва', 1),
+(78, 5, 1, 1434981303, 'фів ', 1),
+(79, 5, 1, 1434981303, 'фів', 1),
+(80, 5, 1, 1434981303, 'афів', 1),
+(81, 5, 1, 1434981304, ' фів', 1),
+(82, 5, 1, 1434981304, 'а', 1),
+(83, 5, 1, 1434981304, 'фів ів', 1),
+(84, 5, 1, 1434981304, 'аф ', 1),
+(85, 5, 1, 1434981305, 'фіва', 1),
+(86, 5, 1, 1434981305, 'фіва', 1),
+(87, 5, 1, 1434981305, 'фів ', 1),
+(88, 5, 1, 1434981305, 'ів', 1),
+(89, 5, 1, 1434981306, 'афів', 1),
+(90, 5, 1, 1434981306, 'а ', 1),
+(91, 5, 1, 1434981306, 'фіва', 1),
+(92, 5, 1, 1434981307, 'фі ів', 1),
+(93, 5, 1, 1434981307, 'а', 1),
+(94, 5, 1, 1434981307, 'ф ', 1),
+(95, 5, 1, 1434981307, 'івафів', 1),
+(96, 5, 1, 1434981308, 'афі', 1),
+(97, 5, 1, 1434981308, ' ', 1),
+(98, 5, 1, 1434981308, 'іва', 1),
+(99, 5, 1, 1434981308, 'фі ', 1),
+(100, 5, 1, 1434981309, 'фіва ', 1),
+(101, 5, 1, 1434981309, 'іва', 1),
+(102, 5, 1, 1434981309, ' ', 1),
+(103, 5, 1, 1434981309, 'фіва', 1),
+(104, 5, 1, 1434981310, 'фіва', 1),
+(105, 5, 1, 1434981310, ' фів', 1),
+(106, 5, 1, 1434981310, 'а', 1),
+(107, 5, 1, 1434981310, 'фів', 1),
+(108, 5, 1, 1434981310, 'афів', 1),
+(109, 5, 1, 1434981311, 'а', 1),
+(110, 5, 1, 1434981311, 'фіва', 1),
+(111, 5, 1, 1434981311, 'фів', 1),
+(112, 5, 1, 1434981311, 'а ів', 1),
+(113, 5, 1, 1434981312, 'а фівалдріфв ґіф', 1),
+(114, 5, 1, 1434981313, 'афівафівжафів', 1),
+(115, 5, 1, 1434981314, 'аів', 1),
+(116, 5, 1, 1434981314, 'а', 1),
+(117, 5, 1, 1434981314, ' фів', 1),
+(118, 5, 1, 1434981314, 'аі', 1),
+(119, 5, 1, 1434981314, 'а', 1),
+(120, 5, 1, 1434981314, 'ів', 1),
+(121, 5, 1, 1434981315, 'а ', 1),
+(122, 5, 1, 1434981315, 'іва', 1),
+(123, 5, 1, 1434981315, 'іва', 1),
+(124, 5, 1, 1434981316, ' фів', 1),
+(125, 5, 1, 1434981316, 'афі', 1),
+(126, 5, 1, 1434981316, 'вафів', 1),
+(127, 5, 1, 1434981316, 'аів', 1),
+(128, 5, 1, 1434981317, 'афів', 1),
+(129, 5, 1, 1434981317, 'а', 1),
+(130, 5, 1, 1434981317, 'фів', 1),
+(131, 5, 1, 1434981317, 'афі', 1),
+(132, 5, 1, 1434981317, 'ва', 1),
+(133, 5, 1, 1434981318, 'фі', 1),
+(134, 5, 1, 1434981318, 'ва', 1),
+(135, 5, 1, 1434981318, 'фівафі', 1),
+(136, 5, 1, 1434981318, 'ва', 1),
+(137, 5, 1, 1434981319, 'фів', 1),
+(138, 5, 1, 1434981319, 'афі', 1),
+(139, 5, 1, 1434981319, 'ва', 1),
+(140, 5, 1, 1434981319, 'фів', 1),
+(141, 5, 1, 1434981319, 'афів', 1),
+(142, 5, 1, 1434981320, 'а', 1),
+(143, 5, 1, 1434981320, 'фів', 1),
+(144, 5, 1, 1434981320, 'афі', 1),
+(145, 5, 1, 1434981320, 'ва', 1),
+(146, 5, 1, 1434981320, 'фіва', 1),
+(147, 5, 1, 1434981321, 'фів', 1),
+(148, 5, 1, 1434981321, 'а', 1),
+(149, 5, 1, 1434981321, 'фів', 1),
+(150, 5, 1, 1434981321, 'а', 1),
+(151, 5, 1, 1434981322, 'іва фіва', 1),
+(152, 5, 1, 1434981322, 'ф ', 1),
+(153, 5, 1, 1434981322, 'іва', 1),
+(154, 5, 1, 1434981323, 'фів', 1),
+(155, 5, 1, 1434981323, 'афі', 1),
+(156, 5, 1, 1434981323, ' фі', 1),
+(157, 5, 1, 1434981323, 'ва', 1),
+(158, 5, 1, 1434981324, 'фів ', 1),
+(159, 5, 1, 1434981324, 'ів', 1),
+(160, 5, 1, 1434981324, ' ів', 1),
+(161, 5, 1, 1434981324, 'афі', 1),
+(162, 5, 1, 1434981325, 'ва', 1),
+(163, 5, 1, 1434981325, 'фіва', 1);
 
 -- --------------------------------------------------------
 
@@ -267,7 +464,7 @@ CREATE TABLE IF NOT EXISTS `sign_in_log` (
   `IP` varchar(20) NOT NULL,
   `date` int(11) NOT NULL,
   `login` varchar(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `sign_in_log`
@@ -287,7 +484,15 @@ INSERT INTO `sign_in_log` (`log_id`, `IP`, `date`, `login`) VALUES
 (11, '127.0.0.1', 1434914348, 'admin'),
 (12, '127.0.0.1', 1434969666, 'admin'),
 (13, '127.0.0.1', 1434973618, 'serrg1994'),
-(14, '127.0.0.1', 1434977142, 'serrg1994');
+(14, '127.0.0.1', 1434977142, 'serrg1994'),
+(15, '127.0.0.1', 1434978218, 'serrg1994'),
+(16, '127.0.0.1', 1434978367, 'demo'),
+(17, '127.0.0.1', 1434980540, 'admin'),
+(18, '127.0.0.1', 1434981026, 'admin'),
+(19, '127.0.0.1', 1434981241, 'serrg1994'),
+(20, '127.0.0.1', 1434981374, 'admin'),
+(21, '127.0.0.1', 1434985375, 'serrg1994'),
+(22, '127.0.0.1', 1434994461, 'admin');
 
 -- --------------------------------------------------------
 
@@ -301,7 +506,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `pass` varchar(50) NOT NULL,
   `group_id` int(11) NOT NULL,
   `avatar` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
@@ -309,7 +514,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_id`, `login`, `pass`, `group_id`, `avatar`) VALUES
 (1, 'admin', '31b830af414ed3e9088bd26446fe1af3', 1, 'no-avatar.png'),
-(5, 'serrg1994', '827ccb0eea8a706c4c34a16891f84e7b', 2, '5a0a655ccb49ae038738e678574009b8.png');
+(5, 'serrg1994', '827ccb0eea8a706c4c34a16891f84e7b', 2, '5a0a655ccb49ae038738e678574009b8.png'),
+(6, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 2, 'no-avatar.png');
 
 -- --------------------------------------------------------
 
@@ -350,7 +556,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `entry_year` smallint(4) NOT NULL,
   `gradation_year` smallint(4) NOT NULL,
   `department_id` tinyint(3) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `user_info`
@@ -358,7 +564,8 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 
 INSERT INTO `user_info` (`info_id`, `user_id`, `first_name`, `last_name`, `sur_name`, `email`, `telephone`, `birthday`, `entry_year`, `gradation_year`, `department_id`) VALUES
 (1, 1, 'Сергій', 'Борисович', 'Новоселецький', 'novoseletskiyserhiy@gmail.com', '380672877665', '2015-06-08', 2, 444, 1),
-(3, 5, 'Сергій', 'Борисович', 'Новоселецький', 'serhiynovos@mail.ru', '0672877665', '2014-09-01', 2010, 2010, 1);
+(3, 5, 'Сергій', 'Борисович', 'Новоселецький', 'serhiynovos@mail.ru', '0672877665', '2014-09-01', 2010, 2010, 1),
+(4, 6, '', '', '', '', '', '0000-00-00', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -412,6 +619,26 @@ CREATE TABLE IF NOT EXISTS `v_blog_rubricks` (
 -- --------------------------------------------------------
 
 --
+-- Дублирующая структура для представления `v_discussions`
+--
+CREATE TABLE IF NOT EXISTS `v_discussions` (
+`id` int(11)
+,`discussion` int(11)
+,`user` int(11)
+,`time` int(11)
+,`message` tinytext
+,`user_id` int(11)
+,`login` varchar(50)
+,`avatar` varchar(50)
+,`group_id` int(11)
+,`first_name` varchar(100)
+,`last_name` varchar(100)
+,`sur_name` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Дублирующая структура для представления `v_page`
 --
 CREATE TABLE IF NOT EXISTS `v_page` (
@@ -457,7 +684,7 @@ CREATE TABLE IF NOT EXISTS `widgets` (
 --
 DROP TABLE IF EXISTS `v_blog`;
 
-CREATE  VIEW `v_blog` AS select `b`.`id` AS `id`,`d`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`d`.`language` AS `language`,`d`.`content` AS `content` from (`blog` `b` join `blog_details` `d` on((`b`.`id` = `d`.`blog`)));
+CREATE VIEW `v_blog` AS select `b`.`id` AS `id`,`d`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`d`.`language` AS `language`,`d`.`content` AS `content` from (`blog` `b` join `blog_details` `d` on((`b`.`id` = `d`.`blog`)));
 
 -- --------------------------------------------------------
 
@@ -466,7 +693,7 @@ CREATE  VIEW `v_blog` AS select `b`.`id` AS `id`,`d`.`title` AS `title`,`b`.`ali
 --
 DROP TABLE IF EXISTS `v_blog_for_admin`;
 
-CREATE  VIEW `v_blog_for_admin` AS select `b`.`id` AS `id`,`b`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`b`.`language` AS `language`,`b`.`content` AS `content`,`r`.`name` AS `rubrick_name` from (`v_blog` `b` join `v_blog_rubricks` `r` on(((`b`.`rubrick` = `r`.`id`) and (`b`.`language` = `r`.`language`))));
+CREATE VIEW `v_blog_for_admin` AS select `b`.`id` AS `id`,`b`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`b`.`language` AS `language`,`b`.`content` AS `content`,`r`.`name` AS `rubrick_name` from (`v_blog` `b` join `v_blog_rubricks` `r` on(((`b`.`rubrick` = `r`.`id`) and (`b`.`language` = `r`.`language`))));
 
 -- --------------------------------------------------------
 
@@ -475,7 +702,16 @@ CREATE  VIEW `v_blog_for_admin` AS select `b`.`id` AS `id`,`b`.`title` AS `title
 --
 DROP TABLE IF EXISTS `v_blog_rubricks`;
 
-CREATE  VIEW `v_blog_rubricks` AS select `r`.`id` AS `id`,`d`.`language` AS `language`,`d`.`name` AS `name`,`r`.`alias` AS `alias` from (`blog_rubricks` `r` join `blog_rubrick_details` `d` on((`r`.`id` = `d`.`rubrick`)));
+CREATE VIEW `v_blog_rubricks` AS select `r`.`id` AS `id`,`d`.`language` AS `language`,`d`.`name` AS `name`,`r`.`alias` AS `alias` from (`blog_rubricks` `r` join `blog_rubrick_details` `d` on((`r`.`id` = `d`.`rubrick`)));
+
+-- --------------------------------------------------------
+
+--
+-- Структура для представления `v_discussions`
+--
+DROP TABLE IF EXISTS `v_discussions`;
+
+CREATE VIEW `v_discussions` AS select `discussion_messages`.`id` AS `id`,`discussion_messages`.`discussion` AS `discussion`,`discussion_messages`.`user` AS `user`,`discussion_messages`.`time` AS `time`,`discussion_messages`.`message` AS `message`,`v_users`.`user_id` AS `user_id`,`v_users`.`login` AS `login`,`v_users`.`avatar` AS `avatar`,`v_users`.`group_id` AS `group_id`,`v_users`.`first_name` AS `first_name`,`v_users`.`last_name` AS `last_name`,`v_users`.`sur_name` AS `sur_name` from (`discussion_messages` join `v_users` on((`discussion_messages`.`user` = `v_users`.`user_id`)));
 
 -- --------------------------------------------------------
 
@@ -484,7 +720,7 @@ CREATE  VIEW `v_blog_rubricks` AS select `r`.`id` AS `id`,`d`.`language` AS `lan
 --
 DROP TABLE IF EXISTS `v_page`;
 
-CREATE  VIEW `v_page` AS select `p`.`page_id` AS `page_id`,`c`.`title` AS `title`,`p`.`alias` AS `alias`,`c`.`language` AS `language`,`c`.`content` AS `content` from (`pages` `p` join `page_content` `c` on((`p`.`page_id` = `c`.`page_id`)));
+CREATE VIEW `v_page` AS select `p`.`page_id` AS `page_id`,`c`.`title` AS `title`,`p`.`alias` AS `alias`,`c`.`language` AS `language`,`c`.`content` AS `content` from (`pages` `p` join `page_content` `c` on((`p`.`page_id` = `c`.`page_id`)));
 
 -- --------------------------------------------------------
 
@@ -493,7 +729,7 @@ CREATE  VIEW `v_page` AS select `p`.`page_id` AS `page_id`,`c`.`title` AS `title
 --
 DROP TABLE IF EXISTS `v_users`;
 
-CREATE  VIEW `v_users` AS select `users`.`user_id` AS `user_id`,`users`.`login` AS `login`,`users`.`avatar` AS `avatar`,`users`.`group_id` AS `group_id`,`user_info`.`first_name` AS `first_name`,`user_info`.`last_name` AS `last_name`,`user_info`.`sur_name` AS `sur_name` from (`users` join `user_info` on((`users`.`user_id` = `user_info`.`user_id`)));
+CREATE VIEW `v_users` AS select `users`.`user_id` AS `user_id`,`users`.`login` AS `login`,`users`.`avatar` AS `avatar`,`users`.`group_id` AS `group_id`,`user_info`.`first_name` AS `first_name`,`user_info`.`last_name` AS `last_name`,`user_info`.`sur_name` AS `sur_name` from (`users` join `user_info` on((`users`.`user_id` = `user_info`.`user_id`)));
 
 --
 -- Индексы сохранённых таблиц
@@ -533,6 +769,22 @@ ALTER TABLE `blog_rubrick_details`
 --
 ALTER TABLE `department`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `discussions`
+--
+ALTER TABLE `discussions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `user` (`user`);
+
+--
+-- Индексы таблицы `discussion_messages`
+--
+ALTER TABLE `discussion_messages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `discussion` (`discussion`),
+  ADD KEY `user` (`user`);
 
 --
 -- Индексы таблицы `languages`
@@ -632,6 +884,16 @@ ALTER TABLE `blog_rubrick_details`
 ALTER TABLE `department`
   MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT COMMENT 'ID of department',AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT для таблицы `discussions`
+--
+ALTER TABLE `discussions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT для таблицы `discussion_messages`
+--
+ALTER TABLE `discussion_messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
 -- AUTO_INCREMENT для таблицы `languages`
 --
 ALTER TABLE `languages`
@@ -640,7 +902,7 @@ ALTER TABLE `languages`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=164;
 --
 -- AUTO_INCREMENT для таблицы `modules`
 --
@@ -660,12 +922,12 @@ ALTER TABLE `page_content`
 -- AUTO_INCREMENT для таблицы `sign_in_log`
 --
 ALTER TABLE `sign_in_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `user_groups`
 --
@@ -675,7 +937,7 @@ ALTER TABLE `user_groups`
 -- AUTO_INCREMENT для таблицы `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `widgets`
 --

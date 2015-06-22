@@ -1,0 +1,21 @@
+<?foreach($data as $dis) {?>
+<li class="left clearfix">
+    <span class="chat-img pull-left">
+                            <img src="/content/avatars/<?=$dis->avatar?>" width="50"
+                                 class="img-circle"/>
+                        </span>
+
+    <div class="chat-body clearfix">
+        <div class="header">
+            <strong class="primary-font"><?=$dis->sur_name?> <?=$dis->
+                first_name?>.</strong>
+            <small class="pull-right text-muted">
+                <span class="glyphicon glyphicon-time"></span><?=date('H:i:s <b>d-m-Y</b>', $dis->time)?>
+            </small>
+        </div>
+        <p>
+            <?=htmlspecialchars($dis->message)?>
+        </p>
+    </div>
+</li>
+<?}?>

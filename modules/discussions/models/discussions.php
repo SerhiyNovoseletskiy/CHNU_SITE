@@ -12,3 +12,10 @@ class discussion_messages {
     public $time;
     public $message;
 }
+
+class v_discussions extends discussion_messages {
+    public $login;
+    public $avatar;
+    public $first_name;
+    public $sur_name;
+}

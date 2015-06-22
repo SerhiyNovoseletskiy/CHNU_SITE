@@ -1,0 +1,70 @@
+<link rel="stylesheet" href=" /modules/messages/views/css/common.css"/>
+<div class="chat-container">
+    <div class="row">
+        <div class="">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> <?=$data->name?>
+
+                </div>
+                <div class="panel-body" id = 'panel-body'>
+                    <ul class="chat" id = "chat">
+
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="<?=TYPE_OUR_MESSAGE_HERE?>" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                <?=SEND?></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        load_messages();
+        setInterval(load_messages, 4000);
+
+        $('#btn-chat').click(send_message);
+
+        $('#btn-input').keypress(function(e) {
+            if(e.which == 13) {
+                first_get = true;
+                send_message();
+            }
+        });
+    });
+
+    var first_get = true;
+
+    function send_message() {
+        if ($('#btn-input').val()) {
+            $.post('/discussions/send', {discussion: <?=$data->_id?>, message: $('#btn-input').val()}, function (d) {
+                load_messages();
+                $('#btn-input').val('');
+            });
+        }
+    }
+
+    function load_messages() {
+        console.log('Load messages');
+        var chat = $('#chat');
+
+
+        $.get('/discussions/get_messages/<?=$data->_id?>', {}, function (d) {
+            chat.html(d);
+
+            if (first_get) {
+                $('.panel-body').animate({ scrollTop: chat.height() }, 0);
+                first_get = !first_get;
+            }
+        }, 'html');
+    }
+</script>
+
