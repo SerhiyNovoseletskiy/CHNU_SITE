@@ -23,7 +23,7 @@
             <label for="department"><?=DEPARTMENT?></label>
             <select class="form-control" id="department" name="department">
                 <?foreach($data['departments'] as $department){?>
-                <option><?=$department->name?></option>
+                <option value = '<?=$department->_id?>'><?=$department->name?></option>
                 <?}?>
             </select>
         </div>
@@ -31,14 +31,22 @@
     </form>
 </div>
 
+<div id="search-result">
 
+</div>
 
 <script>
     $('#search').click(function() {
-        var PIB_val = $("#PIB").val();
+        var PIB_val = $("#PIBS").val();
         var b_date = $("#birthday").val();
         var g_date = $("graduation-year").val();
-        alert(date)
+        var dep_val = $("#department").val();
+
+
+        $.post('/search', $("#search-form").serialize(), function (e) {
+            $("#search-result").html(e);
+        });
+
         /*$.get('/search/index/', {}, function(d) {
             $('#result').html(d);
         }, 'html')*/
