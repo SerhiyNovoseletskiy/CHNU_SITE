@@ -119,6 +119,25 @@ INSERT INTO `blog_rubrick_details` (`id`, `name`, `language`, `rubrick`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `department`
+--
+
+CREATE TABLE IF NOT EXISTS `department` (
+  `id` tinyint(3) NOT NULL AUTO_INCREMENT COMMENT 'ID of department',
+  `name` varchar(50) NOT NULL COMMENT 'Name of department',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`id`, `name`) VALUES
+  (2, 'Фізико технічних та комп''ютерних наук');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `languages`
 --
 
@@ -279,23 +298,32 @@ INSERT INTO `user_groups` (`group_id`, `name`, `root`, `su`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `user_info` (
-  `info_id` int(11) NOT NULL,
+  `info_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `sur_name` varchar(100) NOT NULL,
   `email` varchar(150) NOT NULL,
   `telephone` varchar(100) NOT NULL,
-  `adress` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `birthday` date NOT NULL COMMENT 'Birthday of user',
+  `entry_year` smallint(4) NOT NULL COMMENT 'Year when user entered to university',
+  `graduation_year` smallint(4) NOT NULL COMMENT 'Year when user graduated from university',
+  `department_id` tinyint(3) NOT NULL COMMENT 'Id of department',
+  PRIMARY KEY (`info_id`),
+  KEY `user_id` (`user_id`),
+  KEY `department_id` (`department_id`),
+  KEY `department_id_2` (`department_id`),
+  KEY `department_id_3` (`department_id`),
+  KEY `department_id_4` (`department_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `user_info`
 --
 
-INSERT INTO `user_info` (`info_id`, `user_id`, `first_name`, `last_name`, `sur_name`, `email`, `telephone`, `adress`) VALUES
-(1, 1, 'Сергій', 'Борисович', 'Новоселецький', 'novoseletskiyserhiy@gmail.com', '380672877665', 'вул. Комарова 14/6'),
-(3, 5, 'Сергій', 'Борисович', 'Новоселецький', 'serhiynovos@mail.ru', '0672877665', 'Komarova');
+INSERT INTO `user_info` (`info_id`, `user_id`, `first_name`, `last_name`, `sur_name`, `email`, `telephone`, `birthday`, `entry_year`, `graduation_year`, `department_id`) VALUES
+  (1, 1, 'Сергій', 'Борисович', 'Новоселецький', 'novoseletskiyserhiy@gmail.com', '380672877665', '0000-00-00', 0, 0, 2),
+  (3, 5, 'Serhiy', 'Borisovitch', 'Novoseletskiy', 'serhiynovos@mail.ru', '0672877665', '0000-00-00', 0, 0, 2);
 
 -- --------------------------------------------------------
 
