@@ -27,15 +27,20 @@
                 <?}?>
             </select>
         </div>
-        <div class="form-group"><input type="submit" value="Пошук" class="btn btn-success"/></div>
+        <div class="form-group"><input id="search" type="button" value="Пошук" class="btn btn-success"/></div>
     </form>
 </div>
 
 
+
 <script>
-    $('#seach').click(function() {
-        $.get('/search/search/', {}, function(d) {
+    $('#search').click(function() {
+        var PIB_val = $("#PIB").val();
+        var b_date = $("#birthday").val();
+        var g_date = $("graduation-year").val();
+        alert(date)
+        /*$.get('/search/index/', {}, function(d) {
             $('#result').html(d);
-        }, 'html')
+        }, 'html')*/
     });
 </script>
