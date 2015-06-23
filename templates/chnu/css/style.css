@@ -15,7 +15,7 @@ body {
     background: #ffffff;
     padding: 0;
     box-shadow: #ccc 1px 1px 1px ;
-    top: 230px;
+    top: 30px;
     position: relative;
 }
 
@@ -40,7 +40,6 @@ body {
     height: 300px;
     background: url("../images/header.jpg");
     background-size: cover;
-    position: fixed;
 }
 
 .footer {

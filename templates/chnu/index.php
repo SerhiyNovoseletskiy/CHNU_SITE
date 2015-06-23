@@ -14,9 +14,8 @@ $graduates = LoadPlugin('Graduates');
     <script src="/templates/chnu/js/uitop.js"></script>
 </head>
 <body>
-<div class="header-image"></div>
-
 <div class="container">
+    <div class="header-image"></div>
     <nav class="navbar">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
