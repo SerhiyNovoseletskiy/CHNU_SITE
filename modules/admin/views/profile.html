@@ -31,5 +31,18 @@
         <label><?=TELEPHONE?></label>
         <input type="text" name="telephone" value="<?=$data['user_info']->telephone?>" class="form-control"
                required=""/>
+
+        <!--TODO check fields-->
+        <label><?=BIRTHDAY?></label>
+        <input type="date" name="birthday" value="<?=$data['user_info']->birthday?>" class="form-control" required/>
+
+        <label><?=ENTRY_YEAR?></label>
+        <input type="number" name="entry_year" value="<?=$data['user_info']->entry_year?>" class="form-control" required/>
+
+        <label><?=GRADUATION_YEAR?></label>
+        <input type="number" name="graduation_year" value="<?=$data['user_info']->graduation_year?>" class="form-control" required/>
+
+        <label><?=DEPARTMENT?></label>
+        <input type="text" name="department_id" value="<?=$data['user_info']->department_id?>" class="form-control" required/>
     </div>
 </form>
