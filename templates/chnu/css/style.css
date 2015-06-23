@@ -40,6 +40,7 @@ body {
     height: 200px;
     background: url("../images/header.jpg");
     background-size: cover;
+    margin-top: 6px;
 }
 
 .footer {
