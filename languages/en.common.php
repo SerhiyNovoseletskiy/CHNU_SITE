@@ -10,6 +10,7 @@ define('EVENTS', 'Events');
 define('GRADUATE', 'Graduate');
 define('PROFILE', 'My profile');
 define('MESSAGES', 'My messages');
+define('LAST', 'Latest');
 define('LOGIN', 'Username');
 define('PASSWORD', 'Password');
 define('EMAIL', 'Email');

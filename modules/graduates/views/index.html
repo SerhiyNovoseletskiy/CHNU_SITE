@@ -1,8 +1,9 @@
 <?foreach($data['graduates'] as $graduate) {?>
     <div align="center" class="col-md-6">
     <a href = "/profile/<?=$graduate->login?>">
-        <img src="/content/avatars/<?=$graduate->avatar?>" class="thumbnail">
+        <img src="/content/avatars/<?=$graduate->avatar?>" class="img-circle" width="128">
     </a>
+    <div class="clearfix"></div>
     <span><?=$graduate->sur_name?> <?=$graduate->first_name?> <?=$graduate->last_name?></span>
     </div>
 <?}?>

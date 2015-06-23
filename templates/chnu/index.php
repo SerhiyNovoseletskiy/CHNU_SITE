@@ -11,6 +11,7 @@ $graduates = LoadPlugin('Graduates');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $meta['title'] ?></title>
     <link rel="stylesheet" href="/templates/chnu/css/style.css">
+    <script src="/templates/chnu/js/script.js"></script>
 </head>
 <body>
 <div class="header-image"></div>
@@ -78,14 +79,6 @@ $graduates = LoadPlugin('Graduates');
 
         <!-- Sidebar -->
         <div class="col-md-4">
-            <div class="panel wow fadeIn">
-                <div class="panel-heading">
-                    <div class="panel-title">Гордість ЧНУ</div>
-                </div>
-                <div class="panel-body">
-                    <img src="images/baner.png" class="thumbnail">
-                </div>
-            </div>
 
             <div class="panel wow fadeIn">
                 <div class="panel-heading">
@@ -113,12 +106,10 @@ $graduates = LoadPlugin('Graduates');
         <footer class="footer wow fadeIn">
             ЧНУ &copy; 2015
 
-            <a href="#">Виконали студенти групи 343-ск</a>
         </footer>
     </div>
 </div>
 <div id="up_button"></div>
-<script src="/templates/chnu/js/script.js"></script>
 <script>
     new WOW().init();
 </script>

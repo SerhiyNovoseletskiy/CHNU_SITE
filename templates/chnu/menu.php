@@ -40,12 +40,6 @@ $menu = array(
             'children' => null
         ),
 
-        array(
-            'link' => '/pride',
-            'title' => 'Гордість ЧНУ',
-            'class' => null,
-            'children' => null
-        ),
 
         array(
             'link' => '/blog/rubric/adwords',
@@ -98,12 +92,6 @@ $menu = array(
             'children' => null
         ),
 
-        array(
-            'link' => '/pride',
-            'title' => 'Pride of CHNU',
-            'class' => null,
-            'children' => null
-        ),
 
         array(
             'link' => '/blog/rubric/adwords',

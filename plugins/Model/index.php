@@ -37,7 +37,7 @@ class Model
         return $class;
     }
 
-    function getByParam($class, $params, $order_key = null, $order = null, $limit = null, $limit_to = null, $columns = null)
+    function getByParam($class, $params, $order_key = null, $order = null, $limit = null, $limit_to = null, $columns = null, $begin_params = null)
     {
         $class_name = get_class($class);
 
@@ -57,7 +57,7 @@ class Model
             $cols = substr($cols, 0, strlen($cols) - 1);
         }
 
-        $query = "SELECT {$cols} FROM {$class_name} WHERE {$param}";
+        $query = "SELECT {$begin_params} {$cols} FROM {$class_name} WHERE {$param}";
 
         if ($order_key !== null)
             $query .= ' ORDER BY ' . $order_key;
@@ -89,7 +89,6 @@ class Model
 
             array_push($array, $class);
         }
-
         return $array;
 
     }

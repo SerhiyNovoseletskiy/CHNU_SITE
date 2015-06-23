@@ -10,6 +10,7 @@ define('EVENTS', 'Події');
 define('GRADUATE', 'Наш випускник');
 define('PROFILE', 'Мій профіль');
 define('MESSAGES', 'Мої повідомлення');
+define('LAST', 'Останні записи');
 define('LOGIN', 'Псевдонім');
 define('PASSWORD', 'Пароль');
 define('EMAIL', 'Е-пошта');
