@@ -15,97 +15,92 @@
     <div class="col-md-6">
     <div class="xs-margin"></div>
         <!--Login-->
-        <div class="input-group">
-            <span class="input-group-addon">
-                <span class="input-icon input-icon-user"></span>
-                <span class="input-text"><?=LOGIN?> *</span>
-            </span>
-            <input required value="<?=$data['user']['login']?>" class="form-control input-lg" name="login" id = 'login' type="text">
+        <div class="col-md-12">
+        <label><?=LOGIN?></label>
+        <input required value="<?=$data['user']['login']?>" class="form-control input-sm" name="login" id = 'login' type="text">
         </div>
         <!--Password-->
-        <div class="input-group xs-margin">
-            <span class="input-group-addon">
-                <span class="input-icon input-icon-password"></span>
-                <span class="input-text"><?=PASSWORD?> *</span></span>
-            <input required class="form-control input-lg" name="password"  type="text">
+        <div class="col-md-12">
+            <label><?=PASSWORD?></label>
+            <input required class="form-control input-sm" name="password"  type="password">
         </div>
         <!--Email-->
-        <div class="input-group">
-            <span class="input-group-addon">
-                <span class="input-text"><?=EMAIL?> *</span>
-            </span>
-        <input required value="<?=$data['user']['email']?>" class="form-control input-lg" id="email" name="email" type="email">
+        <div class="col-md-12">
+            <label><?=EMAIL?></label>
+            <input required value="<?=$data['user']['email']?>" class="form-control input-sm" id="email" name="email" type="email">
     </div>
+        <!--Surname-->
+        <div class="col-md-12">
+            <label><?=SUR_NAME?></label>
+            <input required class="form-control input-sm" name="sur_name" value="<?=$data['user']['sur_name']?>" type="text">
+        </div>
+        <!--Firstname-->
+        <div class="col-md-12">
+            <label><?=FIRST_NAME?></label>
+            <input required class="form-control input-sm" value="<?=$data['user']['first_name']?>" name="first_name" type="text">
+        </div>
+        <!--Middle name-->
+        <div class="col-md-12">
+            <label><?=MIDDLE_NAME?></label>
+            <input required class="form-control input-sm" value="<?=$data['user']['middle_name']?>" name="middle_name" type="text">
+        </div>
+        <!--Birthday-->
+        <div class="col-md-12">
+            <label><?=BIRTHDAY?></label>
+            <input required class="form-control input-sm" value="<?=$data['user'][birthday]?>" name="birthday" type="date">
+        </div>
     <div class="sm-margin"></div>
 </div>
     <div class="col-md-6">
-    <div class="xs-margin"></div>
-    <!--Surname-->
-    <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=SUR_NAME?> *</span>
-        </span>
-        <input required class="form-control input-lg" name="sur_name" value="<?=$data['user']['sur_name']?>" type="text">
-    </div>
-    <!--Firstname-->
-    <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=FIRST_NAME?> *</span>
-        </span>
-        <input required class="form-control input-lg" value="<?=$data['user']['first_name']?>" name="first_name" type="text">
-    </div>
-    <!--Middle name-->
-    <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=LAST_NAME?> *</span>
-        </span>
-        <input required class="form-control input-lg" value="<?=$data['user']['last_name']?>" name="last_name" type="text">
-    </div>
-    <!--Birthday-->
-    <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=BIRTHDAY?> *</span>
-            <input required class="form-control input-lg" value="<?=$data['user'][birthday]?>" name="birthday" type="date">
-        </span>
-    </div>
-    <!--Telephone-->
-    <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=TELEPHONE?> *</span>
-        </span>
-        <input required="" class="form-control input-lg" name="telephone" value="<?=$data['user']['telephone']?>" type="text">
-    </div>
-    <div class="xs-margin"></div>
-</div>
-    <div class="col-md-6">
+        <div class="xs-margin"></div>
+        <!--Telephone-->
+        <div class="col-md-12">
+            <label><?=TELEPHONE?></label>
+            <input required class="form-control input-sm" name="telephone" value="<?=$data['user']['telephone']?>" type="text">
+        </div>
         <!--Year of entry-->
-        <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=ENTRY_YEAR?> *</span>
-        </span>
-            <input required class="form-control input-lg" name="entry_year" value="<?=$data['user']['entry_year']?>" type="number">
+        <div class="col-md-12">
+            <label><?=ENTRY_YEAR?></label>
+            <input required class="form-control input-sm" name="entry_year" value="<?=$data['user']['entry_year']?>" type="number">
         </div>
         <!--Graduation year-->
-        <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=GRADUATION_YEAR?> *</span>
-        </span>
-            <input required class="form-control input-lg" name="GRADUATION_YEAR" value="<?=$data['user']['graduation_year']?>" type="number">
+        <div class="col-md-12">
+            <label><?=GRADUATION_YEAR?></label>
+            <input required class="form-control input-sm" name="graduation_year" value="<?=$data['user']['graduation_year']?>" type="number">
         </div>
-
         <!--Department-->
-        <div class="input-group">
-        <span class="input-group-addon">
-            <span class="input-text"><?=DEPARTMENT?> *</span>
-        </span>
-            <input required class="form-control input-lg" name="department_id" value="<?=$data['user']['department_id']?>" type="text">
+        <div class="col-md-12">
+            <label><?=DEPARTMENT?></label>
+            <input required class="form-control input-sm" name="department_id" value="<?=$data['user']['department_id']?>" type="text">
         </div>
-
-
+        <!--Speciality-->
+        <div class="col-md-12">
+            <label><?=SPECIALITY?></label>
+            <input required class="form-control input-sm" name="speciality_id" value="<?=$data['user']['speciality_id']?>" type="text">
+        </div>
+        <!--Form of teaching-->
+        <div class="col-md-12">
+            <label><?=TEACHING_FORM?></label>
+            <input required class="form-control input-sm" name="teaching_form" value="<?=$data['user']['teaching_form']?>" type="text">
+        </div>
+        <!--Educational qualification-->
+        <div class="col-md-12">
+            <label><?=EDUCATION_QUALIFICATION?></label>
+            <input required class="form-control input-sm" name="education_qualification" value="<?=$data['user']['education_qualification']?>" type="text">
+        </div>
+        <!--Additional info-->
+        <div class="col-md-12">
+            <label><?=ADDITIONAL_INFO?></label>
+            <textarea required class="form-control input-sm" name="additional_info" value="<?=$data['user']['additional_info']?>"></textarea>
+        </div>
+        <div class="sm-margin"></div>
     </div>
 <div class="col-md-12">
+    <div class="xs-margin"></div>
     <button class="btn btn-custom"><?=REGISTRATION?></button>
+    <h5><?=FIELDS_HINT?></h5>
 </div>
+
 </form>
 <script>
     function form_valid() {

@@ -35,7 +35,7 @@
             foreach($data['languages'] as $language) {?>
                 <div role="tabpanel" class="tab-pane <?if ($i == 0) {?> active<?}?> " id="<?=$language->code?>">
                     <?=TITLE?>
-                    <input type="text" name="title_<?=$language->code?>" id="title" required="" class="form-control"
+                    <input type="text" name="title_<?=$language->code?>" id="title" required class="form-control"
                            value="<?=$data[$language->code]->title?>">
                     <textarea name="content_<?=$language->code?>" style="height: 400px;"><?=$data[$language->
                         code]->content?></textarea>
@@ -47,14 +47,14 @@
 
     <div class="col-md-3">
         <label><?=ALIAS?></label>
-        <input name="alias" id="alias" required="" value="<?=$data['article']->alias?>" class="form-control">
+        <input name="alias" id="alias" required value="<?=$data['article']->alias?>" class="form-control">
 
         <label><?=IMAGE?></label>
         <img src="/content/blog/600_<?=$data['article']->image?>">
         <input name="image" accept="image/*" type="file" class="form-control">
 
         <label><?=RUBRICK?></label>
-        <select name="rubrick" class="form-control" required="">
+        <select name="rubrick" class="form-control" required>
             <option value="">-- <?=RUBRICK?> --</option>
             <?foreach($data['rubricks'] as $rubrick) {?>
             <option value="<?=$rubrick->_id?>"

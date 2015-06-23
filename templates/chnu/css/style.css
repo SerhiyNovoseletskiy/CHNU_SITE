@@ -138,3 +138,9 @@ img {
 }
 
 /* End animated */
+
+/* Registration view */
+textarea{
+    resize: none;
+}
+/* End registration view */
