@@ -51,7 +51,7 @@ class c_account extends Controller{
 
 
         $user_info->first_name = $_POST['first_name'];
-        $user_info->last_name = $_POST['last_name'];
+        $user_info->middle_name = $_POST['middle_name'];
         $user_info->sur_name = $_POST['sur_name'];
         $user_info->email = $_POST['email'];
         $user_info->telephone = $_POST['telephone'];
@@ -61,6 +61,10 @@ class c_account extends Controller{
         $user_info->entry_year = $_POST['entry_year'];
         $user_info->graduation_year = $_POST['graduation_year'];
         $user_info->department_id = $_POST['department_id'];
+        $user_info->speciality_id = $_POST['speciality_id'];
+        $user_info->teaching_form = $_POST['teaching_form'];
+        $user_info->education_qualification = $_POST['education_qualification'];
+        $user_info->additional_info = $_POST['additional_info'];
 
         $model->update($user_info);
 
@@ -104,10 +108,18 @@ class c_account extends Controller{
         $this->data['user']['email'] = $_POST['email'];
         $this->data['user']['first_name'] = $_POST['first_name'];
         $this->data['user']['sur_name'] = $_POST['sur_name'];
-        $this->data['user']['last_name'] = $_POST['last_name'];
+        $this->data['user']['middle_name'] = $_POST['middle_name'];
         $this->data['user']['telephone'] = $_POST['telephone'];
 
+        // TODO check fields [Vova]
         $this->data['user']['birthday'] = $_POST['birthday'];
+        $this->data['user']['entry_year'] = $_POST['entry_year'];
+        $this->data['user']['graduation_year'] = $_POST['graduation_year'];
+        $this->data['user']['department_id'] = $_POST['department_id'];
+        $this->data['user']['speciality_id'] = $_POST['speciality_id'];
+        $this->data['user']['teaching_form'] = $_POST['teaching_form'];
+        $this->data['user']['education_qualification'] = $_POST['education_qualification'];
+        $this->data['user']['additional_info'] = $_POST['additional_info'];
 
         $login = $model->getRowByParam(new users(),array('login' => $_POST['login']));
         if (!empty($login)) {
@@ -130,15 +142,19 @@ class c_account extends Controller{
             $info = new user_info();
             $info->first_name = $_POST['first_name'];
             $info->sur_name = $_POST['sur_name'];
-            $info->last_name = $_POST['last_name'];
+            $info->middle_name = $_POST['middle_name'];
             $info->email = $_POST['email'];
             $info->telephone = $_POST['telephone'];
 
-            // TODO check fields
+            // TODO check fields [Vova]
             $info->birthday = $_POST['birthday'];
             $info->entry_year = $_POST['entry_year'];
             $info->graduation_year = $_POST['graduation_year'];
             $info->department_id = $_POST['department_id'];
+            $info->speciality_id = $_POST['speciality_id'];
+            $info->teaching_form = $_POST['teaching_form'];
+            $info->education_qualification = $_POST['education_qualification'];
+            $info->additional_info = $_POST['additional_info'];
 
             $info->user_id = $model->getMaxId($user);
             $model->save($info);

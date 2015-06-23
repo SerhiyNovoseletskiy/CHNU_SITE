@@ -58,7 +58,7 @@ class c_profile extends Controller
 
 
         $user_info->first_name = $_POST['first_name'];
-        $user_info->last_name = $_POST['last_name'];
+        $user_info->middle_name = $_POST['middle_name'];
         $user_info->sur_name = $_POST['sur_name'];
         $user_info->email = $_POST['email'];
         $user_info->telephone = $_POST['telephone'];
@@ -68,7 +68,10 @@ class c_profile extends Controller
         $user_info->entry_year = $_POST['entry_year'];
         $user_info->graduation_year = $_POST['graduation_year'];
         $user_info->department_id = $_POST['department_id'];
-
+        $user_info->speciality_id = $_POST['speciality_id'];
+        $user_info->teaching_form = $_POST['teaching_form'];
+        $user_info->education_qualification = $_POST['education_qualification'];
+        $user_info->additional_info = $_POST['additional_info'];
 
         $model->update($user_info);
 
