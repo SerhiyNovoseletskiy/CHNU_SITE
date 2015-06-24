@@ -94,6 +94,11 @@ class c_account extends Controller{
     function _registration() {
         $this->meta['title'] = REGISTRATION;
         $this->view = 'registration';
+
+        // Novoseletskiy
+        global $model;
+        LoadModel('account', 'department');
+        $this->data['departments'] = $model->getAll(new department());
     }
 
     function _reg() {
