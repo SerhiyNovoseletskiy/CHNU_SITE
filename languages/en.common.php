@@ -11,6 +11,7 @@ define('GRADUATE', 'Graduate');
 define('PROFILE', 'My profile');
 define('MESSAGES', 'My messages');
 define('LAST', 'Latest');
+define('DISCUSSIONS', 'Discussions');
 
 define('LOGIN', 'Username');
 define('PASSWORD', 'Password');
@@ -42,6 +43,8 @@ define('EDUCATION_QUALIFICATION', 'EQ');
 define('EDUCATION_QUALIFICATION_HINT', 'Education qualification');
 define('ADDITIONAL_INFO', 'Additional information');
 define('FIELDS_HINT', 'Required field');
+
+
 
 
 

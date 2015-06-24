@@ -11,6 +11,9 @@ define('GRADUATE', 'Наш випускник');
 define('PROFILE', 'Мій профіль');
 define('MESSAGES', 'Мої повідомлення');
 define('LAST', 'Останні записи');
+define('DISCUSSIONS', 'Обговорення');
+
+
 
 define('LOGIN', 'Псевдонім');
 define('PASSWORD', 'Пароль');

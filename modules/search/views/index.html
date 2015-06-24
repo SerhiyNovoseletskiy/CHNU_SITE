@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/modules/search/views/css/common.css"/>
+<h4>Пошук випускника</h4>
+<div id="main-form">
+    <form id="search-form">
+        <div class="form-group">
+            <label for="PIB"><?=PIB?></label>
+            <input list="PIB" id="PIBS" class="form-control">
+            <datalist id="PIB">
+                <?foreach($data['users'] as $user){?>
+                <option><?=$user->sur_name?> <?=$user->first_name?> <?=$user->last_name?></option>
+                <?}?>
+            </datalist>
+        </div>
+        <div class="form-group">
+            <label for="PIB"><?=BIRTHDAY?></label>
+            <input type="date" class="form-control" id="birthday" name="birthday">
+        </div>
+        <div class="form-group">
+            <label for="graduation-year"><?=GRADUATION_YEAR?></label>
+            <input type="date" class="form-control" id="graduation-year" name="graduation-year">
+        </div>
+        <div class="form-group">
+            <label for="department"><?=DEPARTMENT?></label>
+            <select class="form-control" id="department" name="department">
+                <?foreach($data['departments'] as $department){?>
+                <option value = '<?=$department->_id?>'><?=$department->name?></option>
+                <?}?>
+            </select>
+        </div>
+        <div class="form-group"><input id="search" type="button" value="Пошук" class="btn btn-success"/></div>
+    </form>
+</div>
+
+<div id="search-result">
+
+</div>
+
+<script>
+    $('#search').click(function() {
+        var PIB_val = $("#PIBS").val();
+        var b_date = $("#birthday").val();
+        var g_date = $("graduation-year").val();
+        var dep_val = $("#department").val();
+
+
+        $.post('/search', $("#search-form").serialize(), function (e) {
+            $("#search-result").html(e);
+        });
+
+        /*$.get('/search/index/', {}, function(d) {
+            $('#result').html(d);
+        }, 'html')*/
+    });
+</script>
