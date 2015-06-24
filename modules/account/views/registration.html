@@ -26,23 +26,23 @@
         </div>
         <!--Email-->
         <div class="col-md-12">
-            <label><?=EMAIL?></label>
-            <input required value="<?=$data['user']['email']?>" class="form-control input-sm" id="email" name="email" type="email">
+            <label title="<?=EMAIL_HINT?>"><?=EMAIL?></label>
+            <input required value="<?=$data['user']['email']?>" class="form-control input-sm" id="email" name="email" type="email" alt="<?=EMAIL_HINT?>" title="<?=EMAIL_TITLE?>">
     </div>
         <!--Surname-->
         <div class="col-md-12">
             <label><?=SUR_NAME?></label>
-            <input required class="form-control input-sm" name="sur_name" value="<?=$data['user']['sur_name']?>" type="text">
+            <input required class="form-control input-sm" name="sur_name" value="<?=$data['user']['sur_name']?>" type="text" pattern="^[A-Z]{1}[a-z]+$" title="<?=SUR_NAME_TITLE?>">
         </div>
         <!--Firstname-->
         <div class="col-md-12">
             <label><?=FIRST_NAME?></label>
-            <input required class="form-control input-sm" value="<?=$data['user']['first_name']?>" name="first_name" type="text">
+            <input required class="form-control input-sm" value="<?=$data['user']['first_name']?>" name="first_name" type="text" pattern="^[A-Z]{1}[a-z]+$" title="<?=FIRST_NAME_TITLE?>">
         </div>
         <!--Middle name-->
         <div class="col-md-12">
             <label><?=MIDDLE_NAME?></label>
-            <input required class="form-control input-sm" value="<?=$data['user']['middle_name']?>" name="middle_name" type="text">
+            <input required class="form-control input-sm" value="<?=$data['user']['middle_name']?>" name="middle_name" type="text" pattern="^[A-Z]{1}[a-z]+$" title="<?=MIDDLE_NAME_TITLE?>">
         </div>
         <!--Birthday-->
         <div class="col-md-12">
@@ -56,17 +56,17 @@
         <!--Telephone-->
         <div class="col-md-12">
             <label><?=TELEPHONE?></label>
-            <input required class="form-control input-sm" name="telephone" value="<?=$data['user']['telephone']?>" type="text">
+            <input class="form-control input-sm" name="telephone" value="<?=$data['user']['telephone']?>" type="text" pattern="\+[3][8][0][0-9]{9}" required title="<?=TELEPHONE_TITLE?>"/>
         </div>
         <!--Year of entry-->
         <div class="col-md-12">
             <label><?=ENTRY_YEAR?></label>
-            <input required class="form-control input-sm" name="entry_year" value="<?=$data['user']['entry_year']?>" type="number">
+            <input class="form-control input-sm" name="entry_year" value="<?=$data['user']['entry_year']?>" type="text" pattern="[0-9]{4}" required title="<?=ENTRY_YEAR_TITLE?>"/>
         </div>
         <!--Graduation year-->
         <div class="col-md-12">
             <label><?=GRADUATION_YEAR?></label>
-            <input required class="form-control input-sm" name="graduation_year" value="<?=$data['user']['graduation_year']?>" type="number">
+            <input required class="form-control input-sm" name="graduation_year" value="<?=$data['user']['graduation_year']?>" type="text" pattern="[0-9]{4}" title="<?=GRADUATION_YEAR_TITLE?>">
         </div>
         <!--Department-->
         <div class="col-md-12">
@@ -85,7 +85,7 @@
         </div>
         <!--Educational qualification-->
         <div class="col-md-12">
-            <label><?=EDUCATION_QUALIFICATION?></label>
+            <label title="<?=EDUCATION_QUALIFICATION_HINT?>"><?=EDUCATION_QUALIFICATION?></label>
             <input required class="form-control input-sm" name="education_qualification" value="<?=$data['user']['education_qualification']?>" type="text">
         </div>
         <!--Additional info-->
@@ -107,6 +107,5 @@
         $.post('/account/valid',{login: $("#login").val(), email: $("#email").val()}, function(d){
            $("#information").html(d);
         });
-
     }
 </script>
