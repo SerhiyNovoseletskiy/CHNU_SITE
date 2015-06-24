@@ -6,11 +6,13 @@
     </div>
 
     <div class="col-md-7">
-        <h3><?=$data['info']->sur_name?> <?=$data['info']->first_name?> <?=$data['info']->last_name?></h3>
+        <h3><?=$data['user']->sur_name?> <?=$data['user']->first_name?> <?=$data['user']->last_name?></h3>
 
         <ul class="list-group">
-            <li class="list-group-item"><b>Email :</b> <a href="emailto:<?=$data['info']->email?>"><?=$data['info']->
-                email?></a></li>
+            <li class="list-group-item"><b><?=ENTRY_YEAR?> :</b> <?=$data['user']->entry_year?></li>
+            <li class="list-group-item"><b><?=GRADUATION_YEAR?> :</b> <?=$data['user']->gradation_year?></li>
+            <li class="list-group-item"><b><?=BIRTHDAY?> :</b> <?=$data['user']->birthday?></li>
+            <li class="list-group-item"><b><?=DEPARTMENT?> :</b> <?=$data['department']->name?></li>
         </ul>
     </div>
 </div>

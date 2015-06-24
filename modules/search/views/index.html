@@ -4,7 +4,7 @@
     <form id="search-form">
         <div class="form-group">
             <label for="PIB"><?=PIB?></label>
-            <input list="PIB" id="PIBS" class="form-control">
+            <input list="PIB" name="pib" class="form-control">
             <datalist id="PIB">
                 <?foreach($data['users'] as $user){?>
                 <option><?=$user->sur_name?> <?=$user->first_name?> <?=$user->last_name?></option>
@@ -17,11 +17,12 @@
         </div>
         <div class="form-group">
             <label for="graduation-year"><?=GRADUATION_YEAR?></label>
-            <input type="date" class="form-control" id="graduation-year" name="graduation-year">
+            <input type="number" class="form-control" min="1950" max="<?=date('Y')?>"  id="graduation-year" name="graduation-year">
         </div>
         <div class="form-group">
             <label for="department"><?=DEPARTMENT?></label>
             <select class="form-control" id="department" name="department">
+                <option value="0">-- <?=DEPARTMENT?> --</option>
                 <?foreach($data['departments'] as $department){?>
                 <option value = '<?=$department->_id?>'><?=$department->name?></option>
                 <?}?>
@@ -37,18 +38,11 @@
 
 <script>
     $('#search').click(function() {
-        var PIB_val = $("#PIBS").val();
-        var b_date = $("#birthday").val();
-        var g_date = $("graduation-year").val();
-        var dep_val = $("#department").val();
 
 
         $.post('/search', $("#search-form").serialize(), function (e) {
             $("#search-result").html(e);
         });
 
-        /*$.get('/search/index/', {}, function(d) {
-            $('#result').html(d);
-        }, 'html')*/
     });
 </script>

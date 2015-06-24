@@ -6,10 +6,12 @@ class c_profile extends Controller
     {
         global $model;
 
-        LoadModel('admin', 'user');
+        LoadModel('admin', 'v_users');
+        LoadModel('account', 'department');
+        $me = LoadPlugin('User');
 
         $user = $model->getRowByParam(
-            new users(),
+            new v_users(),
             array(
                 'login' => $this->url['2']
             )
@@ -20,15 +22,14 @@ class c_profile extends Controller
             return;
         }
 
-        $user_info = $model->getRowByParam(
-            new user_info(),
-            array(
-                'user_id' => $user->_user_id
-            )
-        );
+        if ($me->user->_user_id == $user->_user_id) {
+            header('Location: /account');
+            return;
+        }
 
-        $this->meta['title'] = $user_info->sur_name . ' ' . $user_info->first_name . '' . $user_info->last_name;
+
+        $this->meta['title'] = $user->sur_name . ' ' . $user->first_name . '' . $user->last_name;
         $this->data['user'] = $user;
-        $this->data['info'] = $user_info;
+        $this->data['department'] = $model->getById(new department(), $user->department_id);
     }
 }
