@@ -71,7 +71,7 @@
         <!--Department (Novoseletskiy)-->
         <div class="col-md-12">
             <label><?=DEPARTMENT?></label>
-            <select class="form-control" name="department" required="">
+            <select class="form-control" name="department" required>
                 <option value="">-- <?=DEPARTMENT?> --</option>
                 <?foreach($data['departments'] as $dep) {?>
                 <option value="<?=$dep->_id?>"><?=$dep->name?></option>
@@ -81,17 +81,30 @@
         <!--Speciality-->
         <div class="col-md-12">
             <label><?=SPECIALITY?></label>
-            <input required class="form-control input-sm" name="speciality_id" value="<?=$data['user']['speciality_id']?>" type="text">
+            <select class="form-control" name="speciality" required>
+                <option value="">-- <?=SPECIALITY?> --</option>
+            </select>
         </div>
         <!--Form of teaching-->
         <div class="col-md-12">
             <label><?=TEACHING_FORM?></label>
-            <input required class="form-control input-sm" name="teaching_form" value="<?=$data['user']['teaching_form']?>" type="text">
+            <select class="form-control" name="teaching_form" required>
+                <option value="">-- <?=TEACHING_FORM?> --</option>
+                <option value="<?=TEACHING_FORM1?>"><?=TEACHING_FORM1?></option>
+                <option value="<?=TEACHING_FORM2?>"><?=TEACHING_FORM2?></option>
+                <option value="<?=TEACHING_FORM3?>"><?=TEACHING_FORM3?></option>
+            </select>
         </div>
         <!--Educational qualification-->
         <div class="col-md-12">
             <label title="<?=EDUCATION_QUALIFICATION_HINT?>"><?=EDUCATION_QUALIFICATION?></label>
-            <input required class="form-control input-sm" name="education_qualification" value="<?=$data['user']['education_qualification']?>" type="text">
+            <select class="form-control" name="education_qualification" required>
+                <option value="">-- <?=EDUCATION_QUALIFICATION?> --</option>
+                <option value="<?=EDUCATION_QUALIFICATION1?>"><?=EDUCATION_QUALIFICATION1?></option>
+                <option value="<?=EDUCATION_QUALIFICATION2?>"><?=EDUCATION_QUALIFICATION2?></option>
+                <option value="<?=EDUCATION_QUALIFICATION3?>"><?=EDUCATION_QUALIFICATION3?></option>
+                <option value="<?=EDUCATION_QUALIFICATION4?>"><?=EDUCATION_QUALIFICATION4?></option>
+            </select>
         </div>
         <!--Additional info-->
         <div class="col-md-12">
@@ -111,4 +124,16 @@
            $("#information").html(d);
         });
     }
+    $('select[name=department]').change(function(){
+        //alert($(this).val());
+        $.ajax({
+            // Send data
+            type: 'POST',
+            url: '/account/get_speciality_by_department_id/',
+            data: {department_id: $(this).val()},
+            success: function(response){
+                $('select[name=speciality]').html(response);
+            }
+        });
+    });
 </script>

@@ -27,7 +27,15 @@ define('MY_ACCOUNT', 'Мій профіль');
 define('SAVE', 'Зберегти');
 define('SPECIALITY', 'Спеціальність');
 define('TEACHING_FORM', 'Форма навчання');
+define('TEACHING_FORM1', 'Денна');
+define('TEACHING_FORM2', 'Заочна');
+define('TEACHING_FORM3', 'Вечірня');
 define('EDUCATION_QUALIFICATION', 'ОКР');
 define('EDUCATION_QUALIFICATION_HINT', 'Освітньо кваліфікаційний рівень');
+define('EDUCATION_QUALIFICATION1', 'Бакалавр');
+define('EDUCATION_QUALIFICATION2', 'Спеціаліст');
+define('EDUCATION_QUALIFICATION3', 'Магістр');
+define('EDUCATION_QUALIFICATION4', 'Молодший спеціаліст');
 define('ADDITIONAL_INFO', 'Додаткова інформація');
 define('FIELDS_HINT', '* - обов' . "'" . 'язкове поле');
+

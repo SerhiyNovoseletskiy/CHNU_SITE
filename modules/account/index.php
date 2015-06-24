@@ -164,4 +164,13 @@ class c_account extends Controller{
             header('Location: /account/success');
         }
     }
+
+    function _get_speciality_by_department_id(){
+        global $model;
+        LoadModel('account', 'speciality');
+        $this->data = $model->getByParam(new speciality(), array('department_id' => $_POST['department_id']));
+        $this->data['speciality'] = $this->data;
+        foreach ($this->data['speciality'] as $spe) echo "<option value=" . $spe->_id . "> " . $spe->name . " </option>";
+        $this->template = false;
+    }
 }
