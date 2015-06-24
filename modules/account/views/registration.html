@@ -16,12 +16,12 @@
     <div class="xs-margin"></div>
         <!--Login-->
         <div class="col-md-12">
-        <label><?=LOGIN?></label>
+        <label><?=USER_LOGIN?></label>
         <input required value="<?=$data['user']['login']?>" class="form-control input-sm" name="login" id = 'login' type="text">
         </div>
         <!--Password-->
         <div class="col-md-12">
-            <label><?=PASSWORD?></label>
+            <label><?=USER_PASS?></label>
             <input required class="form-control input-sm" name="password"  type="password">
         </div>
         <!--Email-->
@@ -41,7 +41,7 @@
         </div>
         <!--Middle name-->
         <div class="col-md-12">
-            <label><?=MIDDLE_NAME?></label>
+            <label><?= MIDDLE_NAME?></label>
             <input required class="form-control input-sm" value="<?=$data['user']['middle_name']?>" name="middle_name" type="text" pattern="^[A-Z]{1}[a-z]+$" title="<?=MIDDLE_NAME_TITLE?>">
         </div>
         <!--Birthday-->
@@ -95,12 +95,10 @@
         </div>
         <div class="sm-margin"></div>
     </div>
-<div class="col-md-12">
-    <div class="xs-margin"></div>
-    <button class="btn btn-custom"><?=REGISTRATION?></button>
+<div class="col-md-6">
+    <button class="btn btn-custom btn-success"><?=REGISTRATION?></button>
     <h5><?=FIELDS_HINT?></h5>
 </div>
-
 </form>
 <script>
     function form_valid() {
