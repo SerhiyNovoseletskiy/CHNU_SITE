@@ -26,8 +26,6 @@ class user_info
     public $sur_name;
     public $email;
     public $telephone;
-
-    // TODO check fields [Vova]
     public $birthday;
     public $entry_year;
     public $graduation_year;

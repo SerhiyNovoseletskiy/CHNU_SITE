@@ -1,11 +1,11 @@
 <div class="pane panel-success col-md-4">
     <div class="panel-body">
         <form id = 'form' action="<?=MODULE_URL?>/save" method="post">
-            <input name="name" required class="form-control" placeholder="Назва факультету">
+            <input name="name" required class="form-control" placeholder="<?=SPECIALITY_NAME?>">
         </form>
     </div>
 
     <div class="panel-footer">
-        <button form="form" type="submit" class="btn btn-success">Зберегти</button>
+        <button form="form" type="submit" class="btn btn-success"><?=SAVE?></button>
     </div>
 </div>

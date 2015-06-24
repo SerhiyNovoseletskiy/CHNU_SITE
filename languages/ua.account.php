@@ -23,8 +23,6 @@ define('ENTRY_YEAR_TITLE', 'Приклад: 2010');
 define('GRADUATION_YEAR', 'Рік випуску');
 define('GRADUATION_YEAR_TITLE', 'Приклад: 2016');
 define('DEPARTMENT', 'Факультет(інститут)');
-define('MY_ACCOUNT', 'Мій профіль');
-define('SAVE', 'Зберегти');
 define('SPECIALITY', 'Спеціальність');
 define('TEACHING_FORM', 'Форма навчання');
 define('TEACHING_FORM1', 'Денна');
@@ -38,4 +36,7 @@ define('EDUCATION_QUALIFICATION3', 'Магістр');
 define('EDUCATION_QUALIFICATION4', 'Молодший спеціаліст');
 define('ADDITIONAL_INFO', 'Додаткова інформація');
 define('FIELDS_HINT', '* - обов' . "'" . 'язкове поле');
+define('MY_ACCOUNT', 'Мій профіль');
+define('SAVE', 'Зберегти');
+define('FORGOT', 'Забули дані?');
 

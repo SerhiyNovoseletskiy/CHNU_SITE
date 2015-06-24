@@ -7,18 +7,21 @@
     <div class="xs-margin"></div>
     <form id="login-form" method="post" action="/account/sign_in">
 
-        <div class="input-group"><span class="input-group-addon">
-            <span class="input-icon input-icon-user"></span>
-            <span class="input-text"><?=LOGIN?> *</span></span>
+        <div class="col-md-12">
+            <label><?=USER_LOGIN?></label>
             <input required class="form-control" name="login" type="text">
         </div>
-
-        <div class="input-group xs-margin"><span class="input-group-addon"><span
-                class="input-icon input-icon-password"></span><span class="input-text"><?=PASSWORD?> *</span></span>
-            <input required class="form-control input-lg"  name="password" type="password"></div>
-        <span class="help-block text-right"><a href="/account/forgout"><?=FORGOUT?></a></span>
-        <span class="help-block text-right"><a href="/account/registration"><?=REGISTRATION?></a></span>
-        <button class="btn btn-custom-2"><?=SIGN_IN?></button>
+        <div class="col-md-12" style="margin-bottom: 10px">
+            <label><?=USER_PASS?></label>
+            <input required class="form-control input-lg"  name="password" type="password">
+        </div>
+        <span class="help-block text-right">
+            <a href="/account/forgot"><?=FORGOT?></a>
+        </span>
+        <span class="help-block text-right">
+            <a href="/account/registration"><?=REGISTRATION?></a>
+        </span>
+        <button class="btn btn-custom-2 btn-success"><?=SIGN_IN?></button>
     </form>
     <div class="sm-margin"></div>
 </div>

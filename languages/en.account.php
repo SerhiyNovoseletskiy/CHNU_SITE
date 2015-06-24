@@ -38,3 +38,4 @@ define('ADDITIONAL_INFO', 'Additional information');
 define('FIELDS_HINT', '* - required field');
 define('MY_ACCOUNT', 'My account');
 define('SAVE', 'Save');
+define('FORGOT', 'Forgot information?');
