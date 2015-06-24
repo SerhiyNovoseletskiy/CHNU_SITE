@@ -1,9 +1,12 @@
-<table>
+<table class="table">
     <?foreach($data as $dep) {?>
     <tr>
         <td>
             <?=$dep->name?>
         </td>
+
+        <td><a href="<?=MODULE_URL?>/edit/<?=$dep->_id?>" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td><a href="<?=MODULE_URL?>/delete/<?=$dep->_id?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a></td>
     </tr>
     <?}?>
 </table>
