@@ -169,7 +169,6 @@ class Model
         $values = substr($values, 0, strlen($values) - 1);
 
         $query = "INSERT INTO `{$class_name}` ({$fields}) VALUES ({$values})";
-        echo $query;
         mysql_query($query);
     }
 
