@@ -11,7 +11,7 @@ class c_search extends Controller
             $this->template = false;
 
             $sql = LoadPlugin('SafeMySQL');
-            $query = " SELECT * FROM v_users WHERE group_id = 2 ";
+            $query = " SELECT first_name, last_name, sur_name, login, avatar FROM v_users WHERE group_id = 2 ";
 
 
             if (!empty($_POST['pib'])) {
