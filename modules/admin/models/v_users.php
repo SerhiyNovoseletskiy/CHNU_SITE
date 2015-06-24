@@ -7,6 +7,10 @@ class v_users {
     public $first_name;
     public $last_name;
     public $sur_name;
+    public $birthday;
+    public $entry_year;
+    public $gradation_year;
+    public $department_id;
 
     function getName() {
         return $this->sur_name . ' '. $this->first_name;
