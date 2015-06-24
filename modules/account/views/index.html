@@ -23,7 +23,7 @@
         <input type="text" name="sur_name" value="<?=$data['user_info']->sur_name?>" class="form-control" required/>
 
         <label><?=MIDDLE_NAME?></label>
-        <input type="text" name="middle_name" value="<?=$data['user_info']->middle_name?>" class="form-control" required/>
+        <input type="text" name="last_name" value="<?=$data['user_info']->last_name?>" class="form-control" required/>
 
         <label><?=EMAIL?></label>
         <input type="email" name="email" value="<?=$data['user_info']->email?>" class="form-control" required/>
@@ -33,28 +33,10 @@
 
         <!--TODO check fields [Vova]-->
         <label><?=BIRTHDAY?></label>
-        <input type="text" name="birthday" value="<?=$data['user_info']->birthday?>" class="form-control" required/>
-
-        <label><?=ENTRY_YEAR?></label>
-        <input type="number" name="entry_year" value="<?=$data['user_info']->entry_year?>" class="form-control" required/>
-
-        <label><?=GRADUATION_YEAR?></label>
-        <input type="number" name="graduation_year" value="<?=$data['user_info']->graduation_year?>" class="form-control" required/>
-
-        <label><?=DEPARTMENT?></label>
-        <input type="text" name="department_id" value="<?=$data['user_info']->department_id?>" class="form-control" required/>
-
-        <label><?=SPECIALITY?></label>
-        <input type="text" name="speciality_id" value="<?=$data['user_info']->speciality_id?>" class="form-control" required/>
-
-        <label><?=TEACHING_FORM?></label>
-        <input type="text" name="teaching_form" value="<?=$data['user_info']->teaching_form?>" class="form-control" required/>
-
-        <label><?=EDUCATION_QUALIFICATION?></label>
-        <input type="text" name="education_qualification" value="<?=$data['user_info']->education_qualification?>" class="form-control" required/>
+        <input type="date" name="birthday" value="<?=$data['user_info']->birthday?>" class="form-control" required/>
 
         <label><?=ADDITIONAL_INFO?></label>
-        <textarea class="form-control" name="additional_info" value="<?=$data['user_info']->additional_info?>" required></textarea>
+        <textarea class="form-control" name="additional_info"  ><?=$data['user_info']->additional_info?></textarea>
 
 
     </div>
