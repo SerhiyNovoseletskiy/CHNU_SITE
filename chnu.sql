@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 24 2015 г., 19:24
+-- Время создания: Июн 24 2015 г., 19:45
 -- Версия сервера: 5.6.21
 -- Версия PHP: 5.6.3
 
@@ -656,6 +656,18 @@ CREATE TABLE IF NOT EXISTS `v_blog_rubricks` (
 -- Дублирующая структура для представления `v_discussions`
 --
 CREATE TABLE IF NOT EXISTS `v_discussions` (
+`id` int(11)
+,`discussion` int(11)
+,`user` int(11)
+,`time` int(11)
+,`message` tinytext
+,`user_id` int(11)
+,`login` varchar(50)
+,`avatar` varchar(50)
+,`group_id` int(11)
+,`first_name` varchar(100)
+,`last_name` varchar(100)
+,`sur_name` varchar(100)
 );
 -- --------------------------------------------------------
 
@@ -675,6 +687,24 @@ CREATE TABLE IF NOT EXISTS `v_page` (
 -- Дублирующая структура для представления `v_users`
 --
 CREATE TABLE IF NOT EXISTS `v_users` (
+`login` varchar(50)
+,`group_id` int(11)
+,`avatar` varchar(50)
+,`info_id` int(11)
+,`user_id` int(11)
+,`first_name` varchar(100)
+,`last_name` varchar(100)
+,`sur_name` varchar(100)
+,`email` varchar(150)
+,`telephone` varchar(100)
+,`birthday` date
+,`entry_year` smallint(4)
+,`graduation_year` smallint(4)
+,`department_id` tinyint(3)
+,`speciality_id` tinyint(3)
+,`teaching_form` varchar(6)
+,`education_qualification` varchar(20)
+,`additional_info` text
 );
 -- --------------------------------------------------------
 
@@ -696,7 +726,7 @@ CREATE TABLE IF NOT EXISTS `widgets` (
 --
 DROP TABLE IF EXISTS `v_blog`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_blog` AS select `b`.`id` AS `id`,`d`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`d`.`language` AS `language`,`d`.`content` AS `content` from (`blog` `b` join `blog_details` `d` on((`b`.`id` = `d`.`blog`)));
+CREATE  VIEW `v_blog` AS select `b`.`id` AS `id`,`d`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`d`.`language` AS `language`,`d`.`content` AS `content` from (`blog` `b` join `blog_details` `d` on((`b`.`id` = `d`.`blog`)));
 
 -- --------------------------------------------------------
 
@@ -705,7 +735,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_blog_for_admin`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_blog_for_admin` AS select `b`.`id` AS `id`,`b`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`b`.`language` AS `language`,`b`.`content` AS `content`,`r`.`name` AS `rubrick_name` from (`v_blog` `b` join `v_blog_rubricks` `r` on(((`b`.`rubrick` = `r`.`id`) and (`b`.`language` = `r`.`language`))));
+CREATE  VIEW `v_blog_for_admin` AS select `b`.`id` AS `id`,`b`.`title` AS `title`,`b`.`alias` AS `alias`,`b`.`image` AS `image`,`b`.`rubrick` AS `rubrick`,`b`.`time_to_publick` AS `time_to_publick`,`b`.`keywords` AS `keywords`,`b`.`description` AS `description`,`b`.`language` AS `language`,`b`.`content` AS `content`,`r`.`name` AS `rubrick_name` from (`v_blog` `b` join `v_blog_rubricks` `r` on(((`b`.`rubrick` = `r`.`id`) and (`b`.`language` = `r`.`language`))));
 
 -- --------------------------------------------------------
 
@@ -714,7 +744,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_blog_rubricks`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_blog_rubricks` AS select `r`.`id` AS `id`,`d`.`language` AS `language`,`d`.`name` AS `name`,`r`.`alias` AS `alias` from (`blog_rubricks` `r` join `blog_rubrick_details` `d` on((`r`.`id` = `d`.`rubrick`)));
+CREATE  VIEW `v_blog_rubricks` AS select `r`.`id` AS `id`,`d`.`language` AS `language`,`d`.`name` AS `name`,`r`.`alias` AS `alias` from (`blog_rubricks` `r` join `blog_rubrick_details` `d` on((`r`.`id` = `d`.`rubrick`)));
 
 -- --------------------------------------------------------
 
@@ -722,7 +752,8 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Структура для представления `v_discussions`
 --
 DROP TABLE IF EXISTS `v_discussions`;
--- используется(#1356 - View 'chnu.v_users' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them)
+
+CREATE  VIEW `v_discussions` AS select `discussion_messages`.`id` AS `id`,`discussion_messages`.`discussion` AS `discussion`,`discussion_messages`.`user` AS `user`,`discussion_messages`.`time` AS `time`,`discussion_messages`.`message` AS `message`,`v_users`.`user_id` AS `user_id`,`v_users`.`login` AS `login`,`v_users`.`avatar` AS `avatar`,`v_users`.`group_id` AS `group_id`,`v_users`.`first_name` AS `first_name`,`v_users`.`last_name` AS `last_name`,`v_users`.`sur_name` AS `sur_name` from (`discussion_messages` join `v_users` on((`discussion_messages`.`user` = `v_users`.`user_id`)));
 
 -- --------------------------------------------------------
 
@@ -731,7 +762,7 @@ DROP TABLE IF EXISTS `v_discussions`;
 --
 DROP TABLE IF EXISTS `v_page`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_page` AS select `p`.`page_id` AS `page_id`,`c`.`title` AS `title`,`p`.`alias` AS `alias`,`c`.`language` AS `language`,`c`.`content` AS `content` from (`pages` `p` join `page_content` `c` on((`p`.`page_id` = `c`.`page_id`)));
+CREATE  VIEW `v_page` AS select `p`.`page_id` AS `page_id`,`c`.`title` AS `title`,`p`.`alias` AS `alias`,`c`.`language` AS `language`,`c`.`content` AS `content` from (`pages` `p` join `page_content` `c` on((`p`.`page_id` = `c`.`page_id`)));
 
 -- --------------------------------------------------------
 
@@ -739,7 +770,8 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Структура для представления `v_users`
 --
 DROP TABLE IF EXISTS `v_users`;
--- используется(#1356 - View 'chnu.v_users' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them)
+
+CREATE  VIEW `v_users` AS select `users`.`login` AS `login`,`users`.`group_id` AS `group_id`,`users`.`avatar` AS `avatar`,`user_info`.`info_id` AS `info_id`,`user_info`.`user_id` AS `user_id`,`user_info`.`first_name` AS `first_name`,`user_info`.`last_name` AS `last_name`,`user_info`.`sur_name` AS `sur_name`,`user_info`.`email` AS `email`,`user_info`.`telephone` AS `telephone`,`user_info`.`birthday` AS `birthday`,`user_info`.`entry_year` AS `entry_year`,`user_info`.`graduation_year` AS `graduation_year`,`user_info`.`department_id` AS `department_id`,`user_info`.`speciality_id` AS `speciality_id`,`user_info`.`teaching_form` AS `teaching_form`,`user_info`.`education_qualification` AS `education_qualification`,`user_info`.`additional_info` AS `additional_info` from (`users` join `user_info`) where (`users`.`user_id` = `user_info`.`user_id`);
 
 --
 -- Индексы сохранённых таблиц
