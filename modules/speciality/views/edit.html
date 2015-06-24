@@ -1,7 +1,14 @@
 <div class="pane panel-success col-md-4">
     <div class="panel-body">
-        <form id = 'form' action="<?=MODULE_URL?>/update/<?=$data->_id?>" method="post">
-            <input name="name" value="<?=$data->name?>" required class="form-control" placeholder="<?=SPECIALITY_NAME?>">
+        <form id = 'form' action="<?=MODULE_URL?>/update/<?=$data['speciality']->_id?>" method="post">
+            <input name="name" value="<?=$data['speciality']->name?>" required class="form-control" placeholder="Назва спеціальності">
+            <label>Кафедра:</label>
+            <select name="department" class="form-control" required>
+                <?foreach($data['department'] as $dep) {?>
+                <option value="<?=$dep->_id?>"
+                <?if ($data['speciality']->department_id == $dep->_id){?>selected<?}?>><?=$dep->name?></option>
+                <?}?>
+            </select>
         </form>
     </div>
 

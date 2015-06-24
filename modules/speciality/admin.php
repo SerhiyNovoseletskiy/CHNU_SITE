@@ -11,7 +11,7 @@ class admin_speciality extends Controller{
         LoadModel('account', 'speciality');
         LoadModel('admin', 'menu');
         $this->view = 'index';
-        $this->meta['title'] = '<?=SPECIALITIES?>';
+        $this->meta['title'] = 'Спеціальності';
         $this->data = $model->getAll(new speciality());
 
         $menu = new menu();
@@ -21,10 +21,9 @@ class admin_speciality extends Controller{
         $menu->class = 'btn btn-success';
 
         $this->menu = array($menu);
-
     }
     function _add(){
-        $this->meta['title'] = '<?=NEW_SPECIALITY?>';
+        $this->meta['title'] = 'Нова спеціальність';
         $this->view = 'add';
 
         LoadModel('admin', 'menu');
@@ -51,10 +50,13 @@ class admin_speciality extends Controller{
     function _edit(){
         global $model;
         LoadModel('account', 'speciality');
+        $this->data['speciality'] = $model->getById(new speciality(), $this->url[5]);
+        $this->meta['title'] = $this->data['speciality']->name;
 
-        $this->data = $model->getById(new speciality(), $this->url[5]);
-        $this->meta['title'] = $this->data->name;
-        // $this->data->department_id not needed?
+        LoadModel('account', 'department');
+        $this->data['department'] = $model->getAll(new department());
+
+
         $this->view = 'edit';
 
         LoadModel('admin', 'menu');
