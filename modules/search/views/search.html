@@ -1,1 +1,10 @@
- nv bvh, bvh,hbjuhkbnijonjio
+<?foreach($data as $graduate) {?>
+<div align="center" class="col-md-6">
+    <a href = "/profile/<?=$graduate['login']?>" target="_blank">
+        <img src="/content/avatars/<?=$graduate['avatar']?>" class="img-circle" width="128" height="128">
+    </a>
+    <div class="clearfix"></div>
+    <span><?=$graduate['sur_name']?> <?=$graduate['first_name']?> <?=$graduate['last_name']?></span>
+</div>
+<?}?>
+
