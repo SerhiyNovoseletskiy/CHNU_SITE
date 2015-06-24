@@ -10,7 +10,8 @@ $graduates = LoadPlugin('Graduates');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $meta['title'] ?></title>
     <link rel="stylesheet" href="/templates/chnu/css/style.css">
-    <script src="/templates/chnu/js/script.js"></script>
+    <script src="/templates/chnu/js/jquery-2.1.4.min.js"></script>
+    <script src="/templates/chnu/js/uitop.js"></script>
 </head>
 <body>
 <div class="header-image"></div>
@@ -113,7 +114,10 @@ $graduates = LoadPlugin('Graduates');
 <script>
     new WOW().init();
 </script>
+<script src="/templates/chnu/js/bootstrap.min.js"></script>
 <script>
+
+
     $(function () {
 
         var defaults = {

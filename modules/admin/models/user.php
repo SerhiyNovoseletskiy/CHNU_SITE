@@ -22,7 +22,7 @@ class user_info
     public $_info_id;
     public $user_id;
     public $first_name;
-    public $middle_name;
+    public $last_name;
     public $sur_name;
     public $email;
     public $telephone;

@@ -145,7 +145,7 @@ class c_account extends Controller{
             $info = new user_info();
             $info->first_name = $_POST['first_name'];
             $info->sur_name = $_POST['sur_name'];
-            $info->middle_name = $_POST['middle_name'];
+            $info->last_name = $_POST['last_name'];
             $info->email = $_POST['email'];
             $info->telephone = $_POST['telephone'];
 
@@ -153,14 +153,15 @@ class c_account extends Controller{
             $info->birthday = $_POST['birthday'];
             $info->entry_year = $_POST['entry_year'];
             $info->graduation_year = $_POST['graduation_year'];
-            $info->department_id = $_POST['department_id'];
-            $info->speciality_id = $_POST['speciality_id'];
+            $info->department_id = $_POST['department'];
+            $info->speciality_id = $_POST['speciality'];
             $info->teaching_form = $_POST['teaching_form'];
             $info->education_qualification = $_POST['education_qualification'];
             $info->additional_info = $_POST['additional_info'];
 
             $info->user_id = $model->getMaxId($user);
             $model->save($info);
+
             header('Location: /account/success');
         }
     }
