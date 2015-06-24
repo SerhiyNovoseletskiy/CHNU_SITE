@@ -2,7 +2,7 @@
     if ($message['to_user'] == $data['me']) {?>
 <li class="left clearfix <?if ($message['isRead'] == 0) echo 'bg-warning'?>">
     <span class="chat-img pull-left">
-                            <img src="/content/avatars/<?=$data[$message['from_user']]->avatar?>" width="50"
+                            <img src="/content/avatars/<?=$data[$message['from_user']]->avatar?>" width="50" height="50"
                                  class="img-circle"/>
                         </span>
 
@@ -21,7 +21,7 @@
 </li>
 <? }  else {?>
 <li class="right clearfix <?if ($message['isRead'] == 0) echo 'bg-warning'?>"><span class="chat-img pull-right">
-                          <img src="/content/avatars/<?=$data[$message['from_user']]->avatar?>" width="50"
+                          <img src="/content/avatars/<?=$data[$message['from_user']]->avatar?>" width="50" height="50"
                                class="img-circle"/>
                         </span>
 
