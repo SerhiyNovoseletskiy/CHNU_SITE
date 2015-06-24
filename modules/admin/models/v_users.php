@@ -9,8 +9,12 @@ class v_users {
     public $sur_name;
     public $birthday;
     public $entry_year;
-    public $gradation_year;
+    public $graduation_year;
     public $department_id;
+    public $speciality_id;
+    public $teaching_form;
+    public $education_qualification;
+    public $additional_info;
 
     function getName() {
         return $this->sur_name . ' '. $this->first_name;

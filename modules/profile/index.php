@@ -8,6 +8,7 @@ class c_profile extends Controller
 
         LoadModel('admin', 'v_users');
         LoadModel('account', 'department');
+        LoadModel('account', 'speciality');
         $me = LoadPlugin('User');
 
         $user = $model->getRowByParam(
@@ -28,8 +29,9 @@ class c_profile extends Controller
         }
 
 
-        $this->meta['title'] = $user->sur_name . ' ' . $user->first_name . '' . $user->last_name;
+        $this->meta['title'] = $user->sur_name . ' ' . $user->first_name . ' ' . $user->last_name;
         $this->data['user'] = $user;
         $this->data['department'] = $model->getById(new department(), $user->department_id);
+        $this->data['speciality'] = $model->getById(new speciality(), $user->speciality_id);
     }
 }
