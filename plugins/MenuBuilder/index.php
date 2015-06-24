@@ -14,15 +14,8 @@ class MenuBuilder
             else
                 $active = '';
 
-            echo "<li class='{$active}'><a href='{$item['link']}' class='{$item['class']}'>{$item['title']}</a>";
+            echo "<li class='{$active}'><a href='{$item['link']}'>{$item['title']}</a>";
 
-            if ($item['children'] !== null) {
-                echo "<ul class='{$item['clild_class']}'>";
-                foreach ($item['children'] as $sub) {
-                    echo "<li><a href='{$sub['link']}' class='{$sub['class']}'>{$sub['title']}</a></li>";
-                }
-                echo "</ul>";
-            }
 
             echo '</li>';
         }
