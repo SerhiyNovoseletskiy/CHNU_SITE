@@ -68,10 +68,15 @@
             <label><?=GRADUATION_YEAR?></label>
             <input required class="form-control input-sm" name="graduation_year" value="<?=$data['user']['graduation_year']?>" type="text" pattern="[0-9]{4}" title="<?=GRADUATION_YEAR_TITLE?>">
         </div>
-        <!--Department-->
+        <!--Department (Novoseletskiy)-->
         <div class="col-md-12">
             <label><?=DEPARTMENT?></label>
-            <input required class="form-control input-sm" name="department_id" value="<?=$data['user']['department_id']?>" type="text">
+            <select class="form-control" name="department" required="">
+                <option value="">-- <?=DEPARTMENT?> --</option>
+                <?foreach($data['departments'] as $dep) {?>
+                <option value="<?=$dep->_id?>"><?=$dep->name?></option>
+                <?}?>
+            </select>
         </div>
         <!--Speciality-->
         <div class="col-md-12">
