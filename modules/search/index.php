@@ -33,7 +33,7 @@ class c_search extends Controller
 
             if (!empty($_POST['graduation-year'])) {
                 $_POST['graduation-year'] = mysql_real_escape_string($_POST['graduation-year']);
-                $query .= " AND gradation_year = '{$_POST['graduation-year']}'";
+                $query .= " AND graduation_year = '{$_POST['graduation-year']}'";
             }
 
             if (!empty($_POST['department'])) {

@@ -106,7 +106,7 @@ $graduates = LoadPlugin('Graduates');
         <!-- Footer -->
         <footer class="footer wow fadeIn">
             ЧНУ &copy; 2015
-
+            <a href = "/developers">Розробники</a>
         </footer>
     </div>
 </div>
