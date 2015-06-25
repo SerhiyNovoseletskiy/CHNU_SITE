@@ -34,6 +34,10 @@ class admin_speciality extends Controller{
         $menu->class = 'btn btn-danger';
 
         $this->menu = array($menu);
+
+        global $model;
+        LoadModel('account', 'department');
+        $this->data['department'] = $model->getAll(new department());
     }
     function _save(){
         $this->template = false;
@@ -42,7 +46,7 @@ class admin_speciality extends Controller{
 
         $spe = new speciality();
         $spe->name = $_POST['name'];
-        $spe->department_id = $_POST['department_id'];
+        $spe->department_id = $_POST['department'];
         $model->save($spe);
 
         header("Location: " . MODULE_URL);
@@ -76,8 +80,9 @@ class admin_speciality extends Controller{
         $this->data = $model->getById(new speciality(), $this->url[5]);
 
         $this->data->name = $_POST['name'];
+        $this->data->department_id = $_POST['department'];
         $model->update($this->data);
-        header("Location: " . MODULE_URL . '/edit' . $this->data->_id);
+        header("Location: " . MODULE_URL . '/edit/' . $this->data->_id);
     }
     function _delete(){
         $this->template = false;
