@@ -10,61 +10,72 @@
 <form method="post" action="/account/reg" id="registerForm">
     <div class="col-md-6">
     <div class="xs-margin"></div>
-        <!--Login-->
+        <!--Email-->
         <div class="col-md-12">
-        <label><?=USER_LOGIN?></label>
-        <input required value="<?=$data['user']['login']?>" class="form-control input-sm" name="login" id = 'login' type="text">
+            <label title="<?=EMAIL_HINT?>"><?=EMAIL?></label>
+            <input id="email" class="form-control input-sm" name="email" required value="<?=$data['user']['email']?>"
+                   type="email" alt="<?=EMAIL_HINT?>" title="<?=EMAIL_TITLE?>">
         </div>
+
         <!--Password-->
         <div class="col-md-12">
             <label><?=USER_PASS?></label>
             <input required class="form-control input-sm" name="password"  type="password">
         </div>
-        <!--Email-->
-        <div class="col-md-12">
-            <label title="<?=EMAIL_HINT?>"><?=EMAIL?></label>
-            <input required value="<?=$data['user']['email']?>" class="form-control input-sm" id="email" name="email" type="email" alt="<?=EMAIL_HINT?>" title="<?=EMAIL_TITLE?>">
-    </div>
+
         <!--Surname-->
         <div class="col-md-12">
             <label><?=SUR_NAME?></label>
-            <input class="form-control input-sm" name="sur_name" value="<?=$data['user']['sur_name']?>" type="text" title="<?=SUR_NAME_TITLE?>">
-            <script src="js/jquery.lemongrab.js">$("input[name=sur_name]").lemongrab();</script>
+            <input class="form-control input-sm" name="sur_name" value="<?=$data['user']['sur_name']?>" type="text"
+                   title="<?=SUR_NAME_TITLE?>" pattern="^[A-Za-z]*$" required>
         </div>
+
         <!--Firstname-->
         <div class="col-md-12">
             <label><?=FIRST_NAME?></label>
-            <input required class="form-control input-sm" value="<?=$data['user']['first_name']?>" name="first_name" type="text" title="<?=FIRST_NAME_TITLE?>">
+            <input class="form-control input-sm" name="first_name" value="<?=$data['user']['first_name']?>" type="text"
+                   title="<?=FIRST_NAME_TITLE?>" pattern="^[A-Za-z]*$" required>
         </div>
+
         <!--Middle name-->
         <div class="col-md-12">
             <label><?= MIDDLE_NAME?></label>
-            <input required class="form-control input-sm" value="<?=$data['user']['last_name']?>" name="last_name" type="text"  title="<?=MIDDLE_NAME_TITLE?>">
+            <input class="form-control input-sm" name="last_name" value="<?=$data['user']['last_name']?>" type="text"
+                   title="<?=MIDDLE_NAME_TITLE?>" pattern="^[A-Za-z]*$">
         </div>
+
         <!--Birthday-->
         <div class="col-md-12">
             <label><?=BIRTHDAY?></label>
-            <input required class="form-control input-sm" value="<?=$data['user'][birthday]?>" name="birthday" type="date">
+            <input class="form-control input-sm" name="birthday" value="<?=$data['user'][birthday]?>" type="date"
+                   required>
         </div>
     <div class="sm-margin"></div>
 </div>
     <div class="col-md-6">
         <div class="xs-margin"></div>
+
         <!--Telephone-->
         <div class="col-md-12">
             <label><?=TELEPHONE?></label>
-            <input class="form-control input-sm" name="telephone" value="<?=$data['user']['telephone']?>" type="text" pattern="\+[3][8][0][0-9]{9}" title="<?=TELEPHONE_TITLE?>"/>
+            <input class="form-control input-sm" name="telephone" value="<?=$data['user']['telephone']?>" type="text"
+                   title="<?=TELEPHONE_TITLE?>" pattern="\+[3][8][0][0-9]{9}"/>
         </div>
+
         <!--Year of entry-->
         <div class="col-md-12">
             <label><?=ENTRY_YEAR?></label>
-            <input class="form-control input-sm" name="entry_year" value="<?=$data['user']['entry_year']?>" type="text" pattern="[0-9]{4}" required title="<?=ENTRY_YEAR_TITLE?>"/>
+            <input class="form-control input-sm" name="entry_year" value="<?=$data['user']['entry_year']?>" type="text"
+                   title="<?=ENTRY_YEAR_TITLE?>" pattern="[0-9]*" required/>
         </div>
+
         <!--Graduation year-->
         <div class="col-md-12">
             <label><?=GRADUATION_YEAR?></label>
-            <input required class="form-control input-sm" name="graduation_year" value="<?=$data['user']['graduation_year']?>" type="text" pattern="[0-9]{4}" title="<?=GRADUATION_YEAR_TITLE?>">
+            <input class="form-control input-sm" name="graduation_year" value="<?=$data['user']['graduation_year']?>"
+                   title="<?=GRADUATION_YEAR_TITLE?>" type="text" pattern="[0-9]*" required >
         </div>
+
         <!--Department (Novoseletskiy)-->
         <div class="col-md-12">
             <label><?=DEPARTMENT?></label>
@@ -75,6 +86,7 @@
                 <?}?>
             </select>
         </div>
+
         <!--Speciality-->
         <div class="col-md-12">
             <label><?=SPECIALITY?></label>
@@ -82,6 +94,7 @@
                 <option value="">-- <?=SPECIALITY?> --</option>
             </select>
         </div>
+
         <!--Form of teaching-->
         <div class="col-md-12">
             <label><?=TEACHING_FORM?></label>
@@ -92,6 +105,7 @@
                 <option value="<?=TEACHING_FORM3?>"><?=TEACHING_FORM3?></option>
             </select>
         </div>
+
         <!--Educational qualification-->
         <div class="col-md-12">
             <label title="<?=EDUCATION_QUALIFICATION_HINT?>"><?=EDUCATION_QUALIFICATION?></label>
@@ -103,11 +117,13 @@
                 <option value="<?=EDUCATION_QUALIFICATION4?>"><?=EDUCATION_QUALIFICATION4?></option>
             </select>
         </div>
+
         <!--Additional info-->
         <div class="col-md-12">
             <label><?=ADDITIONAL_INFO?></label>
             <textarea class="form-control input-sm" name="additional_info" value="<?=$data['user']['additional_info']?>"></textarea>
         </div>
+
         <div class="sm-margin"></div>
     </div>
 <div class="col-md-6">
